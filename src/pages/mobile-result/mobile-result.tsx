@@ -2,11 +2,13 @@ import * as S from "./mobile-result.style";
 
 import { useEffect } from "react";
 import { MoblieIcon } from "@/components";
+import { useLocation, useNavigate } from "react-router-dom";
+import { TResultProps } from "@/types/result";
 
 const MoblieResultPage = () => {
-  //   const { state } = useLocation();
+  const { state }: { state: TResultProps } = useLocation();
 
-  //   const nav = useNavigate();
+  const nav = useNavigate();
   const date = "MAY, 13TH";
 
   useEffect(() => {
@@ -16,7 +18,7 @@ const MoblieResultPage = () => {
   return (
     <S.Container>
       <MoblieIcon text={date} />
-      {/* <S.Title>
+      <S.Title>
         당신은 <span>{state?.bodyTypeName}</span> 체형입니다.
       </S.Title>
       <S.ResultImg src={state?.objFile} />
@@ -60,7 +62,7 @@ const MoblieResultPage = () => {
             }
           />
         </S.ApparelWrapper>
-      </S.SeletedWrapper> */}
+      </S.SeletedWrapper>
     </S.Container>
   );
 };

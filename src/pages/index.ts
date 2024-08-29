@@ -4,6 +4,7 @@ import SignUpPage from "./signup/signup-page";
 import MyPage from "./mypage/mypage";
 import MoblieResultPage from "./mobile-result/mobile-result";
 import ModifyPage from "./modify/modify-page";
+import ResultDetail from "./detail/detail";
 
 export {
   Homepage,
@@ -12,4 +13,5 @@ export {
   MyPage,
   MoblieResultPage,
   ModifyPage,
+  ResultDetail,
 };
