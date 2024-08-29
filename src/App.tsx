@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FittingLayout } from "./layouts";
-import { Homepage, LoginPage, SignUpPage } from "./pages";
+import { BodyCheckPage, Homepage, LoginPage, SignUpPage } from "./pages";
 import { PAGE_PATH } from "@/constants";
 
 const router = createBrowserRouter([
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.SIGN_UP}`,
         element: <SignUpPage />,
+      },
+      {
+        path: `${PAGE_PATH.BODY_CHECK}`,
+        element: <BodyCheckPage />,
       },
     ],
   },
