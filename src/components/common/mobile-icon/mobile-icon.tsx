@@ -5,6 +5,7 @@ import LogOut from "@/assets/images/door.png";
 import { useNavigate, useParams } from "react-router-dom";
 import { FaPen } from "react-icons/fa6";
 import { PAGE_PATH } from "@/constants";
+import useLogout from "@/hooks/queries/auth/useLogout";
 
 interface IMoblieIconProps {
   text?: string;
@@ -14,8 +15,11 @@ interface IMoblieIconProps {
 const MoblieIcon = ({ text, noBack }: IMoblieIconProps) => {
   const { id } = useParams();
   const nav = useNavigate();
+  const { mutate } = useLogout();
 
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    mutate();
+  };
 
   const handleModify = () => {
     nav(`${PAGE_PATH.MY_PAGE}/${PAGE_PATH.MODIFY}/${id}`);
