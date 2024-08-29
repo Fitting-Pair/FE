@@ -17,8 +17,8 @@ function validateSignUp(values: TAuth) {
   const errors = {
     userName: "",
     phoneNumber: "",
-    userHeight: "",
-    userGender: "",
+    height: "",
+    gender: "",
   };
 
   if (values.userName === "") {
@@ -30,14 +30,14 @@ function validateSignUp(values: TAuth) {
       "올바른 휴대폰 전화번호 형식이 아닙니다. (11자리로 입력해주세요)";
   }
 
-  if (values.userHeight === "") {
-    errors.userHeight = "키를 입력해주세요.";
-  } else if (!/^\d{3}$/.test(values.userHeight)) {
-    errors.userHeight = "3자리 숫자로 입력해주세요.";
+  if (values.height === "") {
+    errors.height = "키를 입력해주세요.";
+  } else if (!/^\d{3}$/.test(values.height)) {
+    errors.height = "3자리 숫자로 입력해주세요.";
   }
 
-  if (values.userGender === "") {
-    errors.userGender = "성별을 선택해주세요.";
+  if (values.gender === "") {
+    errors.gender = "성별을 선택해주세요.";
   }
 
   return errors;

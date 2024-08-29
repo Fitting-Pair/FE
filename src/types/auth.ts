@@ -20,4 +20,23 @@ type Tlogin = {
   };
 };
 
-export type { TAuth, TPhone, Tlogin };
+type TSignup = {
+  getTextInputProps: (
+    name: "phoneNumber" | "height" | "userName" | "gender",
+  ) => {
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur: () => void;
+  };
+  touched: Record<string, boolean>;
+  getPhoneNumInputProps: (
+    name: "phoneNumber" | "height" | "userName" | "gender",
+  ) => {
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onBlur: () => void;
+  };
+  errors: Record<string, string>;
+};
+
+export type { TAuth, TPhone, Tlogin, TSignup };

@@ -45,7 +45,7 @@ function useForm<T>({ initialValue, validate }: IUseFormProps<T>) {
   };
 
   const handleGenderChange = (gender: string) => {
-    setValues({ ...values, userGender: gender });
+    setValues({ ...values, gender: gender });
   };
 
   const getGenderButtonProps = (name: keyof T, gender: string) => {

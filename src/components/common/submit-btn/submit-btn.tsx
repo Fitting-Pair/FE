@@ -4,7 +4,7 @@ type TSubmit = {
   text: string;
   width: string;
   login?: boolean;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   onBlur?: () => void;
   disabled?: boolean;
 };
