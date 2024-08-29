@@ -6,7 +6,7 @@ import Ruler from "@/assets/images/ruler.png";
 import SIGNUP from "@/assets/images/SIGNUP.png";
 import { Submit, Input, SexButton, Loading } from "@/components";
 import { Link } from "react-router-dom";
-import useForm from "../../hooks/useForm";
+import useForm from "@/hooks/useForm";
 import { validateSignUp } from "@/utils/validate";
 import { useSignup } from "@/hooks/queries/useSignup";
 
