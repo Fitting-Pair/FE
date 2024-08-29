@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import * as S from "./fitting-layout.style";
-import BackGround from "../../assets/images/Vector.svg";
+import BackGround from "@/assets/images/Vector.svg";
 
 const FittingLayout = () => {
   return (
