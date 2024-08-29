@@ -1,3 +1,7 @@
+♻️ [Frontend](https://github.com/Fitting-Pair/FrontEnd
+) js 코드를 ts로 리팩토링 
+
+
 #  👚 체형 분석을 통해 적합한 패션을 추천해주는 패션 컨설팅 서비스, fitting pair
 오프라인 매장에서 실시간으로 자신의 체형을 분석해 맞는 패션을 추천해주는 패션 컨설팅 키오스크
 
