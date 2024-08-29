@@ -1,12 +1,16 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FittingLayout } from "./layouts";
-import { Homepage } from "./pages";
+import { Homepage, LoginPage } from "./pages";
+import { PAGE_PATH } from "@/constants";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <FittingLayout />,
-    children: [{ index: true, element: <Homepage /> }],
+    children: [
+      { index: true, element: <Homepage /> },
+      { path: `${PAGE_PATH.LOGIN}`, element: <LoginPage /> },
+    ],
   },
 ]);
 
