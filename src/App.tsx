@@ -4,6 +4,7 @@ import {
   Homepage,
   LoginPage,
   MoblieResultPage,
+  ModifyPage,
   MyPage,
   SignUpPage,
 } from "./pages";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.RESULT}/:id`,
         element: <MoblieResultPage />,
+      },
+      {
+        path: `${PAGE_PATH.MODIFY}/:id`,
+        element: <ModifyPage />,
       },
     ],
   },
