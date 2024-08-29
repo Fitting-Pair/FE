@@ -1,6 +1,7 @@
 import { API_PATH } from "@/constants";
 import axios from "axios";
 import { TAuthProps, Tlogin, TPhone, TSignup } from "@/types/auth";
+import { axiosInstance } from "./axiosInstance";
 
 const signup = async ({
   userName,
@@ -30,13 +31,14 @@ const login = async ({ phoneNumber }: TPhone): Promise<Tlogin> => {
   return data;
 };
 
-// const logout = async () => {
-//   setRefresh("Refresh", localStorage.getItem("refreshToken"));
+const logout = async () => {
+  axiosInstance.defaults.headers.common["Refresh"] =
+    localStorage.getItem("refreshToken");
 
-//   const { data } = await axiosInstance.post(
-//     `${API_PATH.AUTH}/${API_PATH.LOGOUT}`,
-//   );
-//   return data;
-// };
+  const { data } = await axiosInstance.post(
+    `${API_PATH.AUTH}/${API_PATH.LOGOUT}`,
+  );
+  return data;
+};
 
-export { login, signup };
+export { login, signup, logout };

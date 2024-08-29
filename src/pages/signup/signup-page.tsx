@@ -8,7 +8,7 @@ import { Submit, Input, SexButton, Loading } from "@/components";
 import { Link } from "react-router-dom";
 import useForm from "@/hooks/useForm";
 import { validateSignUp } from "@/utils/validate";
-import { useSignup } from "@/hooks/queries/useSignup";
+import { useSignup } from "@/hooks/queries/auth/useSignup";
 
 const SignUpPage = () => {
   const signupForm = useForm({

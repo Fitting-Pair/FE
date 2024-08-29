@@ -4,7 +4,7 @@ import { Loading, Submit } from "@/components";
 import Icon from "@/assets/images/icon.png";
 import useForm from "@/hooks/useForm";
 import { validatePhoneNumber } from "@/utils/validate";
-import { useLogin } from "@/hooks/queries/useLogin";
+import { useLogin } from "@/hooks/queries/auth/useLogin";
 
 const LoginPage = () => {
   const loginForm = useForm({

@@ -1,11 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FittingLayout } from "./layouts";
-import { Homepage, LoginPage, SignUpPage } from "./pages";
+import { FittingLayout, MyPageLayout } from "./layouts";
+import {
+  Homepage,
+  LoginPage,
+  MoblieResultPage,
+  ModifyPage,
+  MyPage,
+  ResultDetail,
+  SignUpPage,
+} from "./pages";
 import { PAGE_PATH } from "@/constants";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: `${PAGE_PATH.BASE}`,
     element: <FittingLayout />,
     children: [
       { index: true, element: <Homepage /> },
@@ -13,6 +21,28 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.SIGN_UP}`,
         element: <SignUpPage />,
+      },
+    ],
+  },
+  {
+    path: `${PAGE_PATH.MY_PAGE}`,
+    element: <MyPageLayout />,
+    children: [
+      {
+        path: ":id",
+        element: <MyPage />,
+      },
+      {
+        path: `${PAGE_PATH.RESULT}/:id`,
+        element: <MoblieResultPage />,
+      },
+      {
+        path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:name`,
+        element: <ResultDetail />,
+      },
+      {
+        path: `${PAGE_PATH.MODIFY}/:id`,
+        element: <ModifyPage />,
       },
     ],
   },
