@@ -32,7 +32,7 @@ const BlackLogo = styled.img`
   bottom: 0;
 `;
 
-const PreviousResultWrapper = styled.div`
+const PreviousResultWrapper = styled.div<{ $one: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -68,12 +68,12 @@ const MyPageDate = styled.div`
   width: 95%;
   margin-top: 10px;
   font-family: ${theme.FONT.ROBOTO_MEDIUM};
-  color: #fff;
+  color: ${theme.COLOR.WHITE};
 `;
 
 const LoadingBox = styled.div`
   width: 100%;
-  height: 100%;
+  height: 50%;
   ${theme.ALIGN.ROW_CENTER};
 `;
 

@@ -1,6 +1,12 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { FittingLayout, MyPageLayout } from "./layouts";
-import { Homepage, LoginPage, MyPage, SignUpPage } from "./pages";
+import {
+  Homepage,
+  LoginPage,
+  MoblieResultPage,
+  MyPage,
+  SignUpPage,
+} from "./pages";
 import { PAGE_PATH } from "@/constants";
 
 const router = createBrowserRouter([
@@ -23,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <MyPage />,
+      },
+      {
+        path: `${PAGE_PATH.RESULT}/:id`,
+        element: <MoblieResultPage />,
       },
     ],
   },
