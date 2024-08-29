@@ -4,7 +4,10 @@ interface IUseFormProps<T> {
   initialValue: T;
   validate: (values: T) => Record<keyof T, string>;
 }
-function useForm<T>({ initialValue, validate }: IUseFormProps<T>) {
+function useForm<T extends object>({
+  initialValue,
+  validate,
+}: IUseFormProps<T>) {
   const [values, setValues] = useState<T>(initialValue);
   const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -50,9 +53,16 @@ function useForm<T>({ initialValue, validate }: IUseFormProps<T>) {
 
   const getGenderButtonProps = (name: keyof T, gender: string) => {
     const onClick = () => handleGenderChange(gender);
-    //  const selected = values.userGender === gender;
+
+    let selected = false;
+
+    if ("gender" in values) {
+      selected = values.gender === gender;
+    }
+
     const onBlur = () => handleBlur(name);
-    return { onClick, onBlur };
+
+    return { onClick, onBlur, selected };
   };
 
   const getTextInputProps = (name: keyof T) => {

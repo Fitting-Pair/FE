@@ -4,10 +4,11 @@ import Icon from "@/assets/images/icon.png";
 import Phone from "@/assets/images/phone.png";
 import Ruler from "@/assets/images/ruler.png";
 import SIGNUP from "@/assets/images/SIGNUP.png";
-import { Submit, Input, SexButton } from "@/components";
+import { Submit, Input, SexButton, Loading } from "@/components";
 import { Link } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import { validateSignUp } from "@/utils/validate";
+import { useSignup } from "@/hooks/queries/useSignup";
 
 const SignUpPage = () => {
   const signupForm = useForm({
@@ -20,16 +21,18 @@ const SignUpPage = () => {
     validate: validateSignUp,
   });
 
-  //   const { mutate, isPending } = useSignup();
+  const { mutate, isPending } = useSignup();
 
   const handleSubmit = () => {
-    //  mutate({
-    //    userName: signupForm.values.userName,
-    //    phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ""),
-    //    height: parseInt(signupForm.values.height),
-    //    gender: signupForm.values.gender,
-    //  });
+    mutate({
+      userName: signupForm.values.userName,
+      phoneNumber: signupForm.values.phoneNumber.replace(/-/g, ""),
+      height: parseInt(signupForm.values.height),
+      gender: signupForm.values.gender,
+    });
   };
+
+  console.log(signupForm.values);
 
   const handleDisabled = () => {
     const { phoneNumber, userName, height, gender } = signupForm.errors;
@@ -41,9 +44,9 @@ const SignUpPage = () => {
     );
   };
 
-  //   if (isPending) {
-  //     return <Loading text={"회원가입 중 ..."} />;
-  //   }
+  if (isPending) {
+    return <Loading text={"회원가입 중 ..."} />;
+  }
 
   return (
     <S.Container>

@@ -1,8 +1,13 @@
 import { API_PATH } from "@/constants";
 import axios from "axios";
-import { TAuth, Tlogin, TPhone } from "@/types/auth";
+import { TAuthProps, Tlogin, TPhone, TSignup } from "@/types/auth";
 
-const signup = async ({ userName, phoneNumber, height, gender }: TAuth) => {
+const signup = async ({
+  userName,
+  phoneNumber,
+  height,
+  gender,
+}: TAuthProps): Promise<TSignup> => {
   const { data } = await axios.post(
     `${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.SIGN_UP}`,
     {

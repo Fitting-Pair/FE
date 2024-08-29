@@ -1,21 +1,24 @@
-import { TSignup } from "@/types/auth";
+import { TSignupProps } from "@/types/auth";
 import * as S from "./sex-button.style";
 import { MdMale, MdFemale } from "react-icons/md";
 
 interface IButton {
   male?: boolean;
-  signup: TSignup;
+  signup: TSignupProps;
 }
 
 const SexButton = ({ male, signup }: IButton) => {
   const gender = male ? "male" : "female";
-  //   const { onClick } = signup.getGenderButtonProps(gender);
+  const { onClick, selected } =
+    signup?.getGenderButtonProps?.("gender", gender) || {};
+
+  console.log(selected);
 
   return (
     <S.Container
       type="button"
-      // onClick={onClick}
-      // $selected={selected}
+      onClick={onClick}
+      $selected={selected}
       $male={male}
     >
       {male ? <MdMale /> : <MdFemale />}

@@ -9,6 +9,13 @@ type TAuth = {
   gender: string;
 };
 
+type TAuthProps = {
+  phoneNumber: string;
+  userName: string;
+  height: number;
+  gender: string;
+};
+
 type Tlogin = {
   code: string;
   message: string;
@@ -21,6 +28,19 @@ type Tlogin = {
 };
 
 type TSignup = {
+  code: string;
+  message: string;
+};
+
+type TSignupProps = {
+  getGenderButtonProps?: (
+    name: "gender",
+    gender: string,
+  ) => {
+    selected: boolean;
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    onBlur: () => void;
+  };
   getTextInputProps: (
     name: "phoneNumber" | "height" | "userName" | "gender",
   ) => {
@@ -29,9 +49,7 @@ type TSignup = {
     onBlur: () => void;
   };
   touched: Record<string, boolean>;
-  getPhoneNumInputProps: (
-    name: "phoneNumber" | "height" | "userName" | "gender",
-  ) => {
+  getPhoneNumInputProps: (name: "phoneNumber") => {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur: () => void;
@@ -39,4 +57,4 @@ type TSignup = {
   errors: Record<string, string>;
 };
 
-export type { TAuth, TPhone, Tlogin, TSignup };
+export type { TAuth, TPhone, TAuthProps, Tlogin, TSignup, TSignupProps };
