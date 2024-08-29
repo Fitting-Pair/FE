@@ -5,8 +5,19 @@ type TPhone = {
 type TAuth = {
   phoneNumber: string;
   userName: string;
-  userHeight: string;
-  userGender: string;
+  height: string;
+  gender: string;
 };
 
-export type { TAuth, TPhone };
+type Tlogin = {
+  code: string;
+  message: string;
+  data: {
+    id: number;
+    userName: string;
+    refreshToken: string;
+    accessToken: string;
+  };
+};
+
+export type { TAuth, TPhone, Tlogin };

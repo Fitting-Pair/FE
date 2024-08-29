@@ -44,12 +44,12 @@ function useForm<T>({ initialValue, validate }: IUseFormProps<T>) {
     });
   };
 
-  const handleGenderChange = (name: keyof T, gender: string) => {
+  const handleGenderChange = (gender: string) => {
     setValues({ ...values, userGender: gender });
   };
 
   const getGenderButtonProps = (name: keyof T, gender: string) => {
-    const onClick = () => handleGenderChange(name, gender);
+    const onClick = () => handleGenderChange(gender);
     //  const selected = values.userGender === gender;
     const onBlur = () => handleBlur(name);
     return { onClick, onBlur };

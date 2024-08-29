@@ -1,10 +1,10 @@
 import * as S from "./login-page.style";
 import LOGO from "../../assets/images/Logo.webp";
-import { Submit } from "@/components";
+import { Loading, Submit } from "@/components";
 import Icon from "@/assets/images/icon.png";
 import useForm from "@/hooks/useForm";
 import { validatePhoneNumber } from "@/utils/validate";
-// import { useLogin } from "../../hooks/queries/useLogin";
+import { useLogin } from "../../hooks/queries/useLogin";
 
 const LoginPage = () => {
   const loginForm = useForm({
@@ -14,17 +14,17 @@ const LoginPage = () => {
     validate: validatePhoneNumber,
   });
 
-  //   const { mutate, isPending } = useLogin();
+  const { mutate, isPending } = useLogin();
 
   const handleSubmit = () => {
-    // mutate({
-    //   phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
-    // });
+    mutate({
+      phoneNumber: loginForm.values.phoneNumber.replace(/-/g, ""),
+    });
   };
 
-  //   if (isPending) {
-  //     return <Loading text={"로그인 중 ..."} />;
-  //   }
+  if (isPending) {
+    return <Loading text={"로그인 중 ..."} />;
+  }
 
   return (
     <S.Container>
