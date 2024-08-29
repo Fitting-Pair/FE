@@ -20,4 +20,12 @@ type TResultProps = {
   };
 };
 
-export type { TResultProps };
+type TResult = {
+  code: number;
+  message: string;
+  data: {
+    userStylingResultResponseDtos: TResultProps[];
+  };
+};
+
+export type { TResultProps, TResult };
