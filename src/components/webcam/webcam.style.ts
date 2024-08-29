@@ -17,16 +17,9 @@ const Container = styled.div`
     height: 750px;
   }
   background-color: gray;
-`;
 
-const WebCam = styled.video`
-  object-fit: cover;
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    width: 550px;
-    height: 750px;
+  video {
+    object-fit: cover;
   }
 `;
 
@@ -82,4 +75,4 @@ const NextButton = styled.div`
   }
 `;
 
-export { Container, WebCam, Button, NextButton };
+export { Container, Button, NextButton };

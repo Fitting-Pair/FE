@@ -8,4 +8,7 @@ import Icon from "./common/icon/icon";
 // signup
 import SexButton from "./signup/sex-button";
 
-export { Loading, Error, Submit, Input, SexButton, Icon };
+// body-check
+import WebcamComponent from "./webcam/webcam";
+
+export { Loading, Error, Submit, Input, SexButton, Icon, WebcamComponent };

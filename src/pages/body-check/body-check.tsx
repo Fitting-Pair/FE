@@ -1,7 +1,6 @@
-import Webcam from "@/components/webcam/webcam";
 import * as S from "./body-check.style";
 
-import { Icon } from "@/components";
+import { Icon, WebcamComponent } from "@/components";
 // import Webcam from "../../components/Webcam/Webcam";
 
 const BodyCheckPage = () => {
@@ -9,7 +8,7 @@ const BodyCheckPage = () => {
     <S.Container>
       <Icon blackNum={1} />
       <S.ContentContainer>
-        <Webcam />
+        <WebcamComponent />
         <S.TipWrapper>
           <S.TipIcon>{`Tip ) 아래 순서를 따라해주세요.`}</S.TipIcon>
           <S.ContentWrapper>
