@@ -10,7 +10,7 @@ const usePostResult = (resultId: number) => {
     onSuccess: (data) => {
       console.log(data);
       nav(
-        `${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}/${resultId}`,
+        `/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}/${resultId}`,
         { state: data.data },
       );
     },

@@ -15,16 +15,16 @@ const ContentWrapper = styled.div`
   width: 325px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   line-height: 24px;
 
-  margin: 10px 30px;
+  margin: 20px 30px 10px;
   font-size: 16px;
   font-family: ${theme.FONT.ROBOTO_MEDIUM};
 
   span {
+    font-weight: bold;
     text-align: center;
     margin-bottom: 10px;
   }
@@ -32,7 +32,7 @@ const ContentWrapper = styled.div`
 
 const ResultWrapper = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
-  width: 996px;
+  width: 93%;
   height: 1400px;
   border-radius: 24px;
   background-color: white;
@@ -53,10 +53,7 @@ const ClothWrapper = styled.div`
   border-radius: 24px;
 
   section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    ${theme.ALIGN.ROW_CENTER};
   }
 
   span {
@@ -66,7 +63,7 @@ const ClothWrapper = styled.div`
     color: #ffc791;
   }
 
-  div {
+  img {
     ${theme.ALIGN.COLUMN_CENTER};
     width: 250px;
     height: 250px;
@@ -96,10 +93,11 @@ const ClothWrapper = styled.div`
 
 const ResultTitle = styled.div`
   font-family: ${theme.FONT.JIMHURIA_REGULAR};
-  font-size: 82px;
+  font-size: 3rem;
+  font-weight: 900;
 
   span {
-    color: #ffc791;
+    color: ${theme.COLOR.ORANGE};
   }
 
   @media ${theme.WINDOW_SIZE.MOBILE} {
@@ -110,7 +108,12 @@ const ResultTitle = styled.div`
 `;
 
 const ResultImg = styled.div`
+  margin-top: 10px;
   img {
+    width: 350px;
+    height: 450px;
+    object-fit: fill;
+
     @media ${theme.WINDOW_SIZE.MOBILE} {
       margin: 30px 0px;
       width: 300px;
