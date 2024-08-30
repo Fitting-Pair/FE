@@ -33,10 +33,10 @@ const MyPage = () => {
       <S.PreviousResultWrapper $one={one}>
         <SwiperComponent>
           {data?.map((e: TResultProps) => (
-            <SwiperSlide key={e.id}>
+            <SwiperSlide key={e.resultId}>
               <S.PreviousData
                 onClick={() =>
-                  nav(`/my-page/result/${e.id}`, { state: { ...e } })
+                  nav(`/my-page/result/${e.resultId}`, { state: { ...e } })
                 }
               >
                 <ResultPaper result={e} />

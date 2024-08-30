@@ -31,14 +31,11 @@ const ResultPaper = ({ result }: { result: TResultProps }) => {
         <S.ClothWrapper>
           <span>나만의 의류 리스트</span>
           <section>
-            <div>
-              <img src={userStylingResponseDto.userTopClothesDto.imageUrl} />
-            </div>
-            <div>
-              <img
-                src={userStylingResponseDto.userBottomClothesItemsDto.imageUrl}
-              />
-            </div>
+            <img src={userStylingResponseDto.userTopClothesDto.imageUrl} />
+
+            <img
+              src={userStylingResponseDto.userBottomClothesItemsDto.imageUrl}
+            />
           </section>
         </S.ClothWrapper>
       </S.ResultWrapper>

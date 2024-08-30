@@ -75,17 +75,17 @@ const ClothWrapper = styled.div`
 
   section {
     ${theme.ALIGN.ROW_CENTER};
-    img {
-      width: 50px;
-    }
   }
 
-  div {
+  img {
     ${theme.ALIGN.ROW_CENTER};
     background-color: ${theme.COLOR.WHITE};
     margin: 0px 10px;
-    border-radius: 24px;
+    border-radius: 5px;
     box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
   }
 `;
 
