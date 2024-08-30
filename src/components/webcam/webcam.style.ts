@@ -16,22 +16,11 @@ const Container = styled.div`
     max-width: 550px;
     height: 750px;
   }
-  background-color: gray;
 
   video {
     object-fit: cover;
   }
 `;
-
-// const Canvas = styled.canvas`
-//   display: ${(props) => (props.$showCanvas ? "" : "none")};
-//   object-fit: cover;
-
-//   @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-//     width: 550px;
-//     height: 750px;
-//   }
-// `;
 
 const Button = styled.div`
   position: absolute;
