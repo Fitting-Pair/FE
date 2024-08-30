@@ -2,21 +2,10 @@ import * as S from "./result-page.style";
 
 import { Icon } from "@/components";
 import { TResultProps } from "@/types/result";
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 const ResultPage = () => {
   const { state }: { state: TResultProps } = useLocation();
-
-  const [isModalVisible, setModalVisible] = useState(false);
-
-  const openModal = () => {
-    setModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setModalVisible(false);
-  };
 
   return (
     <S.Container>
@@ -54,9 +43,6 @@ const ResultPage = () => {
               />
             </section>
           </S.ClothWrapper>
-          {/* <S.Button onClick={openModal}>Store</S.Button> */}
-          <S.QRImg></S.QRImg>
-          {/* <Modal isVisible={isModalVisible} onClose={closeModal} /> */}
         </S.ResultWrapper>
       </S.ContentResultContainer>
     </S.Container>
