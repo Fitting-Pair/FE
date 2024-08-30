@@ -10,5 +10,17 @@ import SexButton from "./signup/sex-button";
 
 // body-check
 import WebcamComponent from "./webcam/webcam";
+import ApparelSwiper from "./bodycheck/apparel-swiper/apparel-swiper";
+import ClothComponent from "./bodycheck/cloth/cloth";
 
-export { Loading, Error, Submit, Input, SexButton, Icon, WebcamComponent };
+export {
+  Loading,
+  Error,
+  Submit,
+  Input,
+  SexButton,
+  Icon,
+  WebcamComponent,
+  ApparelSwiper,
+  ClothComponent,
+};

@@ -29,7 +29,7 @@ const WebcamComponent = () => {
 
       const blob = await fetch(imageSrc).then((res) => res.blob());
       const formData = new FormData();
-      formData.set("imageFile", blob, "image");
+      formData.set("imageFile", blob, "image.png");
       setFormData(formData);
     }
   }, [webcamRef]);

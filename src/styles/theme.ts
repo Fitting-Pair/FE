@@ -7,6 +7,7 @@ const COLOR = {
   DARK_GRAY: "#6D6B69",
   RED: "#F42121",
   WHITE: "#fff",
+  BLACK: "#000",
 };
 
 const ALIGN = {
