@@ -2,13 +2,34 @@ import * as S from "./result-page.style";
 
 import { Icon } from "@/components";
 import { TResultProps } from "@/types/result";
-import { useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
+import QRCode from "react-qr-code";
 
 const ResultPage = () => {
   const { state }: { state: TResultProps } = useLocation();
+  const captureRef = useRef(null);
+  // const nav = useNavigate();
+
+  // const handleCaptureClick = () => {
+  //   const e = captureRef.current;
+  //   if (e) {
+  //     html2canvas(e).then((canvas) => {
+  //       const imgData = canvas.toDataURL("image/png");
+  //       nav("/capture", { state: { imgData } });
+  //     });
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   if (state) {
+  //     handleCaptureClick();
+  //   }
+  // }, [state]);
 
   return (
-    <S.Container>
+    <S.Container ref={captureRef}>
       <Icon blackNum={3} />
       <S.ContentResultContainer>
         <S.ResultWrapper>
@@ -44,6 +65,9 @@ const ResultPage = () => {
             </section>
           </S.ClothWrapper>
         </S.ResultWrapper>
+        <S.QRImg>
+          <QRCode size={114} value={`${window.location.href}`} />
+        </S.QRImg>
       </S.ContentResultContainer>
     </S.Container>
   );

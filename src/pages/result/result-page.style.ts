@@ -70,7 +70,7 @@ const ClothWrapper = styled.div`
     background-color: white;
     margin: 0px 15px;
     border-radius: 24px;
-    box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
+    border: 5px solid ${theme.COLOR.GREEN};
   }
 
   @media ${theme.WINDOW_SIZE.MOBILE} {
