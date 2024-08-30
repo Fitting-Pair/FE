@@ -2,9 +2,8 @@ import * as S from "./result-page.style";
 
 import { Icon } from "@/components";
 import { TResultProps } from "@/types/result";
-import { useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import html2canvas from "html2canvas";
+import { useRef } from "react";
+import { useLocation } from "react-router-dom";
 import QRCode from "react-qr-code";
 
 const ResultPage = () => {
