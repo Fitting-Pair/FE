@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FittingLayout, MyPageLayout } from "./layouts";
+import { FittingLayout, MyPageLayout, StylingLayout  } from "./layouts";
 import {
   Homepage,
   LoginPage,
@@ -8,6 +8,8 @@ import {
   MyPage,
   ResultDetail,
   SignUpPage,
+  BodyCheckPage,
+  StylingPage,
 } from "./pages";
 import { PAGE_PATH } from "@/constants";
 
@@ -21,6 +23,20 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.SIGN_UP}`,
         element: <SignUpPage />,
+      },
+      {
+        path: `${PAGE_PATH.BODY_CHECK}`,
+        element: <BodyCheckPage />,
+      },
+    ],
+  },
+  {
+    path: `/${PAGE_PATH.BODY_CHECK}`,
+    element: <StylingLayout />,
+    children: [
+      {
+        path: `${PAGE_PATH.STYLEING}/:imgId`,
+        element: <StylingPage />,
       },
     ],
   },

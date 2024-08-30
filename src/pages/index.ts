@@ -5,6 +5,8 @@ import MyPage from "./mypage/mypage";
 import MoblieResultPage from "./mobile-result/mobile-result";
 import ModifyPage from "./modify/modify-page";
 import ResultDetail from "./detail/detail";
+import BodyCheckPage from "./body-check/body-check";
+import StylingPage from "./style/style-page";
 
 export {
   Homepage,
@@ -14,4 +16,6 @@ export {
   MoblieResultPage,
   ModifyPage,
   ResultDetail,
+  BodyCheckPage, 
+  StylingPage,
 };

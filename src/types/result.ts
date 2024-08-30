@@ -1,3 +1,5 @@
+import { TCloth } from "./cloth";
+
 type TResultProps = {
   id: number;
   objFile: string;
@@ -28,4 +30,23 @@ type TResult = {
   };
 };
 
-export type { TResultProps, TResult };
+
+type TFirstResult = {
+  code: number;
+  message: string;
+  data: TData;
+};
+
+type TData = {
+  resultId: number;
+  objFile: string;
+  bodyTypeName: string;
+  bodyTypeFeature: string;
+  bodyTypeCareful: string;
+  clothesDto: {
+    topClothesItems: TCloth[];
+    bottomClothesItems: TCloth[];
+  };
+};
+
+export type { TResultProps, TResult, TFirstResult, TData };
