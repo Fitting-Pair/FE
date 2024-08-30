@@ -12,7 +12,6 @@ const SwiperComponent = ({ children }: { children: ReactNode }) => {
       centeredSlides={true}
       spaceBetween={10}
       initialSlide={1}
-      loop={true}
     >
       {children}
     </Swiper>
