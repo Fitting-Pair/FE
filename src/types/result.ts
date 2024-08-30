@@ -30,7 +30,6 @@ type TResult = {
   };
 };
 
-
 type TFirstResult = {
   code: number;
   message: string;
@@ -49,4 +48,9 @@ type TData = {
   };
 };
 
-export type { TResultProps, TResult, TFirstResult, TData };
+type TSelectCloth = {
+  topName: string;
+  bottomName: string;
+};
+
+export type { TResultProps, TResult, TFirstResult, TData, TSelectCloth };
