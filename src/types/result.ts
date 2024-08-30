@@ -1,7 +1,7 @@
 import { TCloth } from "./cloth";
 
 type TResultProps = {
-  id: number;
+  resultId: number;
   objFile: string;
   bodyTypeName: string;
   bodyTypeFeature: string;

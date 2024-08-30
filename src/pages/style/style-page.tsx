@@ -25,7 +25,7 @@ const StylingPage = () => {
     bottomName: "",
   });
 
-  const { mutate } = usePostResult(Number(imgId));
+  const { mutate } = usePostResult(Number(result?.resultId));
 
   const fetchResult = async () => {
     try {
@@ -56,7 +56,7 @@ const StylingPage = () => {
 
   const handleSubmit = () => {
     mutate({
-      resultId: Number(imgId),
+      resultId: Number(result?.resultId),
       topName: cloth.topName,
       bottomName: cloth.bottomName,
     });
