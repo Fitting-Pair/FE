@@ -30,6 +30,7 @@ type TResult = {
   };
 };
 
+
 type TFirstResult = {
   code: number;
   message: string;

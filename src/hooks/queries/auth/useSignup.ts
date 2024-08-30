@@ -2,8 +2,8 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 
 import { toast } from "sonner";
-import { PAGE_PATH } from "../../constants";
-import theme from "../../styles/theme";
+import { PAGE_PATH } from "@/constants";
+import theme from "@/styles/theme";
 import { signup } from "@/apis/user";
 import { AxiosError } from "axios";
 
