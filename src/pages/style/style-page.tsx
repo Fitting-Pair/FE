@@ -1,24 +1,35 @@
 import * as S from "./style-page.style";
 
-import { ClothComponent, Error, Icon, Loading } from "@/components";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+  ClothComponent,
+  Error,
+  Icon,
+  Loading,
+  TopComponent,
+} from "@/components";
+import { useParams } from "react-router-dom";
 import useLoadingStore from "@/store/useLoadingStore";
 import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
-import { PAGE_PATH } from "@/constants";
 import { ApparelSwiper } from "@/components";
 import { getBodyCheckResult } from "@/apis/results";
-import { TData } from "@/types/result";
+import { TData, TSelectCloth } from "@/types/result";
+import usePostResult from "@/hooks/queries/results/usePostResult";
 
 const StylingPage = () => {
-  const nav = useNavigate();
   const { imgId } = useParams();
   const { loading, setLoading } = useLoadingStore((state) => state);
   const [result, setResult] = useState<TData | null>(null);
+  const [cloth, setCloth] = useState<TSelectCloth>({
+    topName: "",
+    bottomName: "",
+  });
+
+  const { mutate } = usePostResult(Number(result?.resultId));
 
   const fetchResult = async () => {
     try {
-      const data = await getBodyCheckResult(imgId as string);
+      const data = await getBodyCheckResult(Number(imgId));
 
       return data;
     } catch (error) {
@@ -40,6 +51,16 @@ const StylingPage = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  console.log(cloth);
+
+  const handleSubmit = () => {
+    mutate({
+      resultId: Number(result?.resultId),
+      topName: cloth.topName,
+      bottomName: cloth.bottomName,
+    });
+  };
 
   if (loading) {
     return <Loading text={"분석중 ..."} />;
@@ -74,7 +95,11 @@ const StylingPage = () => {
               <ApparelSwiper>
                 {result.clothesDto.topClothesItems.map((e, idx) => (
                   <SwiperSlide key={idx}>
-                    <ClothComponent cloth={e} />
+                    <TopComponent
+                      appearl={e}
+                      setCloth={setCloth}
+                      cloth={cloth}
+                    />
                   </SwiperSlide>
                 ))}
               </ApparelSwiper>
@@ -86,22 +111,18 @@ const StylingPage = () => {
               <ApparelSwiper>
                 {result.clothesDto.bottomClothesItems.map((e, idx) => (
                   <SwiperSlide key={idx}>
-                    <ClothComponent cloth={e} />
+                    <ClothComponent
+                      appearl={e}
+                      setCloth={setCloth}
+                      cloth={cloth}
+                    />
                   </SwiperSlide>
                 ))}
               </ApparelSwiper>
             </S.Slider>
           </S.ClothWrapper>
 
-          <S.Button
-            onClick={() =>
-              nav(
-                `/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}`,
-              )
-            }
-          >
-            결과지 제작
-          </S.Button>
+          <S.Button onClick={handleSubmit}>결과지 제작</S.Button>
         </S.ContentResultContainer>
       </S.Container>
     );

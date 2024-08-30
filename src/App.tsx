@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { FittingLayout, MyPageLayout, StylingLayout  } from "./layouts";
+import { FittingLayout, MyPageLayout, StylingLayout } from "./layouts";
 import {
   Homepage,
   LoginPage,
@@ -10,6 +10,7 @@ import {
   SignUpPage,
   BodyCheckPage,
   StylingPage,
+  ResultPage,
 } from "./pages";
 import { PAGE_PATH } from "@/constants";
 
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.STYLEING}/:imgId`,
         element: <StylingPage />,
+      },
+      {
+        path: `${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}/:imgId`,
+        element: <ResultPage />,
       },
     ],
   },

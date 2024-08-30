@@ -9,16 +9,15 @@ import MoblieIcon from "./common/mobile-icon/mobile-icon";
 // signup
 import SexButton from "./signup/sex-button";
 
-
 // body-check
 import WebcamComponent from "./webcam/webcam";
 import ApparelSwiper from "./bodycheck/apparel-swiper/apparel-swiper";
 import ClothComponent from "./bodycheck/cloth/cloth";
+import TopComponent from "./bodycheck/cloth/top/top";
 
 // mypage
 import SwiperComponent from "./mypage/swiper";
 import ResultPaper from "./mypage/result/result";
-
 
 export {
   Loading,
@@ -33,4 +32,5 @@ export {
   MoblieIcon,
   SwiperComponent,
   ResultPaper,
+  TopComponent,
 };
