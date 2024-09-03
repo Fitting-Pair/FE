@@ -33,7 +33,7 @@ const ResultPage = () => {
       <S.ContentResultContainer>
         <S.ResultWrapper>
           <S.ResultTitle>
-            당신은 <span>{state.bodyTypeName}</span> 제형입니다.
+            당신은 <span>{state.bodyTypeName}</span> 체형입니다.
           </S.ResultTitle>
           <S.ResultImg>
             <img src={state.objFile} />
