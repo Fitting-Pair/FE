@@ -22,12 +22,14 @@ function validateSignUp(values: TAuth) {
   };
 
   if (values.userName === "") {
-    errors.userName = "유저 이름을 입력해주세요.";
+    errors.userName = "닉네임을 입력해주세요.";
+  } else if (values.userName.length > 5) {
+    errors.userName = "닉네임은 5자 이내로 입력해주세요.";
   }
 
   if (!/^\d{3}-\d{4}-\d{4}$/.test(values.phoneNumber)) {
     errors.phoneNumber =
-      "올바른 휴대폰 전화번호 형식이 아닙니다. (11자리로 입력해주세요)";
+      "올바른 휴대폰 전화번호 형식이 아닙니다. (010-XXXX-XXXX)";
   }
 
   if (values.height === "") {
