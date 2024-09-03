@@ -88,6 +88,12 @@ const ResultWrapper = styled.div`
   background-color: ${theme.COLOR.WHITE};
 `;
 
+const LoadingContainer = styled.div`
+  width: 100%;
+  height: 100dvh;
+  ${theme.ALIGN.ROW_CENTER};
+`;
+
 export {
   Container,
   Title,
@@ -97,4 +103,5 @@ export {
   SeletedWrapper,
   ApparelWrapper,
   ResultWrapper,
+  LoadingContainer,
 };
