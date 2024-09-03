@@ -35,6 +35,8 @@ const WebcamComponent = () => {
   }, [webcamRef]);
 
   const handleCam = () => {
+    setCaptureEnable(false);
+    setUrl(null);
     startTimer();
   };
 
