@@ -9,10 +9,9 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  text-align: center;
   font-family: ${theme.FONT.JIMHURIA_REGULAR};
   font-size: 32px;
-  margin-top: 100px;
+  margin-top: 40px;
   font-weight: 900;
 
   span {
@@ -21,9 +20,10 @@ const Title = styled.div`
 `;
 
 const ResultImg = styled.img`
-  margin: 30px 0px 50px;
+  margin: 0px 0px 50px;
   width: 300px;
   height: 300px;
+  object-fit: contain;
 `;
 
 const ContentWrapper = styled.div`
@@ -46,7 +46,6 @@ const ContentBox = styled.div`
     padding: 0 30px;
     text-align: center;
     word-break: keep-all;
-    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
   }
 `;
 
@@ -67,16 +66,26 @@ const ApparelWrapper = styled.div`
 
   img {
     margin: 20px;
-    border: 7px solid ${theme.COLOR.GREEN};
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     border-radius: 24px;
-    width: 250px;
-    height: 250px;
+    width: 240px;
+    height: 240px;
     object-fit: cover;
 
     &:hover {
       box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.5);
     }
   }
+`;
+
+const ResultWrapper = styled.div`
+  width: 90%;
+  border-radius: 16px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+
+  ${theme.ALIGN.COLUMN_CENTER};
+  background-color: ${theme.COLOR.WHITE};
 `;
 
 export {
@@ -87,4 +96,5 @@ export {
   ContentBox,
   SeletedWrapper,
   ApparelWrapper,
+  ResultWrapper,
 };

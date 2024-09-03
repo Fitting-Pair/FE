@@ -35,8 +35,7 @@ const ResultWrapper = styled.div`
   width: 93%;
   height: 1400px;
   border-radius: 24px;
-  background-color: white;
-  opacity: 0.8;
+  background-color: ${theme.COLOR.WHITE};
 
   @media ${theme.WINDOW_SIZE.MOBILE} {
     height: 50%;
