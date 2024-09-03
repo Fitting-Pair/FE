@@ -32,8 +32,6 @@ const SignUpPage = () => {
     });
   };
 
-  console.log(signupForm.values);
-
   const handleDisabled = () => {
     const { phoneNumber, userName, height, gender } = signupForm.errors;
     return !(

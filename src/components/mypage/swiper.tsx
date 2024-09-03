@@ -7,12 +7,7 @@ import { ReactNode } from "react";
 
 const SwiperComponent = ({ children }: { children: ReactNode }) => {
   return (
-    <Swiper
-      slidesPerView={"auto"}
-      centeredSlides={true}
-      spaceBetween={10}
-      initialSlide={1}
-    >
+    <Swiper slidesPerView={"auto"} centeredSlides={true} spaceBetween={10}>
       {children}
     </Swiper>
   );

@@ -12,8 +12,6 @@ const SexButton = ({ male, signup }: IButton) => {
   const { onClick, selected } =
     signup?.getGenderButtonProps?.("gender", gender) || {};
 
-  console.log(selected);
-
   return (
     <S.Container
       type="button"

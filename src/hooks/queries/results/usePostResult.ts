@@ -8,7 +8,6 @@ const usePostResult = (resultId: number) => {
   return useMutation({
     mutationFn: postBodyCheckResult,
     onSuccess: (data) => {
-      console.log(data);
       nav(
         `/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${PAGE_PATH.RESULT}/${resultId}`,
         { state: data.data },

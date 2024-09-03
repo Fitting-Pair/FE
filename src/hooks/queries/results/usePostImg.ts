@@ -15,7 +15,6 @@ const usePostImg = () => {
   return useMutation({
     mutationFn: postImg,
     onSuccess: (data) => {
-      console.log(data);
       setLoading(true);
       nav(`/${PAGE_PATH.BODY_CHECK}/${PAGE_PATH.STYLEING}/${data.data.imgId}`, {
         replace: true,

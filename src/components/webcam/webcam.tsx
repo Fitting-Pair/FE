@@ -51,7 +51,6 @@ const WebcamComponent = () => {
 
             if (results.gestures && results.gestures.length > 0) {
               const gesture = results.gestures[0][0];
-              console.log(gesture);
 
               if (gesture.categoryName === "Closed_Fist") {
                 console.log("주먹을 쥠");
