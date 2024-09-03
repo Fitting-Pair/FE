@@ -52,8 +52,6 @@ const StylingPage = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  console.log(cloth);
-
   const handleSubmit = () => {
     mutate({
       resultId: Number(result?.resultId),

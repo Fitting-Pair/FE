@@ -7,7 +7,6 @@ import { useEffect } from "react";
 
 const ResultDetail = () => {
   const { state } = useLocation();
-  console.log(state);
 
   useEffect(() => {
     window.scrollTo(0, 0);
