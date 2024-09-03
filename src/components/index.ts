@@ -18,6 +18,7 @@ import TopComponent from "./bodycheck/cloth/top/top";
 // mypage
 import SwiperComponent from "./mypage/swiper";
 import ResultPaper from "./mypage/result/result";
+import MypageBox from "./common/mypage-box/mypage-box";
 
 export {
   Loading,
@@ -33,4 +34,5 @@ export {
   SwiperComponent,
   ResultPaper,
   TopComponent,
+  MypageBox,
 };
