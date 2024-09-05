@@ -31,7 +31,6 @@ const MyPage = () => {
   if (data && userInfo) {
     const one = data.length === 1;
 
-    //TODO: 날짜 변경
     content = (
       <S.PreviousResultWrapper $one={one}>
         <SwiperComponent>
@@ -44,7 +43,7 @@ const MyPage = () => {
                   })
                 }
               >
-                <ResultPaper result={e} />
+                <ResultPaper result={e} userInfo={userInfo} />
               </S.PreviousData>
               <S.MyPageDate>{e.localDate.split("T")[0]}</S.MyPageDate>
             </SwiperSlide>
