@@ -3,11 +3,11 @@ import * as S from "./mobile-result.style";
 import { useEffect } from "react";
 import { Loading, MoblieIcon } from "@/components";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { TResultProps } from "@/types/result";
 import useGetResult from "@/hooks/queries/results/useGetResult";
+import { TUser } from "@/types/auth";
 
 const MoblieResultPage = () => {
-  const { state }: { state: TResultProps } = useLocation();
+  const { state }: { state: TUser } = useLocation();
   const { id } = useParams();
 
   const nav = useNavigate();
@@ -26,13 +26,14 @@ const MoblieResultPage = () => {
     );
   }
 
-  if (data)
+  if (data && state)
     return (
       <S.Container>
         <MoblieIcon text={data.localDate.split("T")[0]} />
         <S.ResultWrapper>
           <S.Title>
-            닉네임, <br /> <span>{data.bodyTypeName}</span> 체형입니다.
+            {state.userName}, <br /> <span>{data.bodyTypeName}</span>{" "}
+            체형입니다.
           </S.Title>
           <S.ResultImg src={data.objFile} />
           <S.ContentWrapper>
@@ -75,7 +76,7 @@ const MoblieResultPage = () => {
                 src={data.userStylingResponseDto.userTopClothesDto.imageUrl}
                 onClick={() =>
                   nav(
-                    `/my-page/result/detail/${state?.userStylingResponseDto.userTopClothesDto.name}`,
+                    `/my-page/result/detail/${data.userStylingResponseDto.userTopClothesDto.name}`,
                     {
                       state: {
                         ...data.userStylingResponseDto.userTopClothesDto,
@@ -90,7 +91,7 @@ const MoblieResultPage = () => {
                 }
                 onClick={() =>
                   nav(
-                    `/my-page/result/detail/${state?.userStylingResponseDto.userBottomClothesItemsDto.name}`,
+                    `/my-page/result/detail/${data.userStylingResponseDto.userBottomClothesItemsDto.name}`,
                     {
                       state: {
                         ...data.userStylingResponseDto

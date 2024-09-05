@@ -11,10 +11,12 @@ import { useNavigate } from "react-router-dom";
 import useGetAllResult from "@/hooks/queries/results/useGetAllResult";
 import { SwiperSlide } from "swiper/react";
 import { TResultProps } from "@/types/result";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const MyPage = () => {
   const nav = useNavigate();
   const { data, isPending } = useGetAllResult();
+  const { data: userInfo } = useGetUserInfo();
 
   let content;
 
@@ -26,7 +28,7 @@ const MyPage = () => {
     );
   }
 
-  if (data) {
+  if (data && userInfo) {
     const one = data.length === 1;
 
     //TODO: 날짜 변경
@@ -37,7 +39,9 @@ const MyPage = () => {
             <SwiperSlide key={e.resultId}>
               <S.PreviousData
                 onClick={() =>
-                  nav(`/my-page/result/${e.resultId}`, { state: { ...e } })
+                  nav(`/my-page/result/${e.resultId}`, {
+                    state: { ...userInfo },
+                  })
                 }
               >
                 <ResultPaper result={e} />

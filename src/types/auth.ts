@@ -9,6 +9,10 @@ type TAuth = {
   gender: string;
 };
 
+type TUser = TAuth & {
+  id: number;
+};
+
 type TAuthProps = {
   phoneNumber: string;
   userName: string;
@@ -57,4 +61,4 @@ type TSignupProps = {
   errors: Record<string, string>;
 };
 
-export type { TAuth, TPhone, TAuthProps, Tlogin, TSignup, TSignupProps };
+export type { TAuth, TPhone, TAuthProps, Tlogin, TSignup, TSignupProps, TUser };
