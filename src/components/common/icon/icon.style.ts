@@ -24,6 +24,7 @@ const Icon = styled.div<IIconProps>`
   padding: 10px;
   margin: 6px;
   font-family: ${theme.FONT.ROBOTO_MEDIUM};
+  font-weight: 600;
 
   @media ${theme.WINDOW_SIZE.IPAD_PRO} {
     font-size: 17px;
