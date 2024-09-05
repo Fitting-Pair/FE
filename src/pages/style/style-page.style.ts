@@ -76,7 +76,6 @@ const ResultWrapper = styled.div`
   height: 996px;
   border-radius: 24px;
   background-color: ${theme.COLOR.WHITE};
-  opacity: 0.8;
 `;
 
 const ClothWrapper = styled.div`

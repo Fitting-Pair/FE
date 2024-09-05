@@ -8,6 +8,8 @@ const COLOR = {
   RED: "#F42121",
   WHITE: "#fff",
   BLACK: "#000",
+
+  BACKGROUND: "#F4EFE7",
 };
 
 const ALIGN = {

@@ -1,11 +1,20 @@
 import { TCloth } from "./cloth";
 
+/* 전체 결과지 */
 type TResultProps = {
   resultId: number;
   objFile: string;
   bodyTypeName: string;
   bodyTypeFeature: string;
   bodyTypeCareful: string;
+  localDate: string;
+  userBodySizeResponseDto: {
+    chestSize: number;
+    height: number;
+    hipSize: number;
+    shoulderSize: number;
+    waistSize: number;
+  };
   userStylingResponseDto: {
     userTopClothesDto: {
       name: string;
