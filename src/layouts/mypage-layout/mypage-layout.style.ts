@@ -2,7 +2,7 @@ import styled from "styled-components";
 import theme from "@/styles/theme";
 
 const Container = styled.div`
-  background-color: #f4efe7;
+  background-color: ${theme.COLOR.BACKGROUND};
   height: 100dvh;
   ${theme.ALIGN.COLUMN_CENTER};
 `;

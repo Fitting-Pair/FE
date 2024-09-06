@@ -32,6 +32,7 @@ const API_PATH = {
 
   // my-page
   MYPAGE: "mypage",
+  MYPAGE_RESULT: "/mypage/result",
 };
 
 export { PAGE_PATH, API_PATH };
