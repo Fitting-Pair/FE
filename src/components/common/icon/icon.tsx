@@ -11,15 +11,15 @@ const Icon = ({ blackNum }: { blackNum: number }) => {
     <S.Container>
       <S.Icon className="check" $blackNum={blackNum}>
         <S.Img src={blackNum !== 1 ? penBlackImg : penImg} />
-        Body Check
+        체형 분석
       </S.Icon>
       <S.Icon className="style" $blackNum={blackNum}>
         <S.Img src={blackNum !== 2 ? clothImg : clothWhiteImg} />
-        Styling
+        스타일링
       </S.Icon>
       <S.Icon className="result" $blackNum={blackNum}>
         <S.Img src={blackNum !== 3 ? checkImg : checkWhiteImg} />
-        Result
+        결과 분석
       </S.Icon>
     </S.Container>
   );
