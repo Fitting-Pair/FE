@@ -16,18 +16,8 @@ type TResultProps = {
     waistSize: number;
   };
   userStylingResponseDto: {
-    userTopClothesDto: {
-      name: string;
-      brand: string;
-      imageUrl: string;
-      siteUrl: string;
-    };
-    userBottomClothesItemsDto: {
-      name: string;
-      brand: string;
-      imageUrl: string;
-      siteUrl: string;
-    };
+    userTopClothesDto: TCloth;
+    userBottomClothesItemsDto: TCloth;
   };
 };
 
@@ -51,6 +41,13 @@ type TData = {
   bodyTypeName: string;
   bodyTypeFeature: string;
   bodyTypeCareful: string;
+  userBodySizeResponseDto: {
+    chestSize: number;
+    height: number;
+    hipSize: number;
+    shoulderSize: number;
+    waistSize: number;
+  };
   clothesDto: {
     topClothesItems: TCloth[];
     bottomClothesItems: TCloth[];
