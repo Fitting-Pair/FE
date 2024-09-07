@@ -1,6 +1,10 @@
 import theme from "@/styles/theme";
 import styled from "styled-components";
 
+interface BoxProps {
+  $male: boolean;
+}
+
 const Container = styled.div`
   position: relative;
   display: flex;
@@ -26,15 +30,17 @@ const Container = styled.div`
   }
 `;
 
-const SEXBox = styled.div`
-  ${theme.ALIGN.ROW_SPACE_BETWEEN};
+const SEXBox = styled.div<BoxProps>`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   width: 95%;
   margin: 10px 0;
-  button {
-    width: 100%;
-    background-color: ${theme.COLOR.WHITE};
-    border: none;
-    height: 44px;
+
+  p {
+    font-size: 14px;
+    font-weight: 700;
+    margin-left: 3px;
   }
 
   svg {
@@ -49,6 +55,30 @@ const SEXBox = styled.div`
     background: ${theme.COLOR.GRAY};
     border: 0;
   }
+
+  .male {
+    background-color: ${({ $male }) => ($male ? "#42BCFF" : theme.COLOR.WHITE)};
+    svg {
+      color: ${({ $male }) => ($male ? theme.COLOR.WHITE : "#42BCFF")};
+    }
+  }
+
+  .female {
+    background-color: ${({ $male }) => ($male ? theme.COLOR.WHITE : "#F42121")};
+    svg {
+      color: ${({ $male }) => (!$male ? theme.COLOR.WHITE : "#F42121")};
+    }
+  }
+`;
+
+const ButtonBox = styled.div`
+  ${theme.ALIGN.ROW_SPACE_BETWEEN};
+
+  button {
+    width: 100%;
+    border: none;
+    height: 44px;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -61,4 +91,4 @@ const BlackLogo = styled.img`
   bottom: 0;
 `;
 
-export { Container, SEXBox, BlackLogo, InfoWrapper };
+export { Container, SEXBox, BlackLogo, InfoWrapper, ButtonBox };

@@ -8,7 +8,6 @@ const useGetUserInfo = () => {
     queryFn: getUserInfo,
     select: (data) => data.data,
     staleTime: 5 * 60 * 1000,
-    gcTime: Infinity,
   });
 };
 

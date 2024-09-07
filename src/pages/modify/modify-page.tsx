@@ -6,41 +6,39 @@ import Ruler from "@/assets/images/ruler.png";
 import { MdMale, MdFemale } from "react-icons/md";
 
 import * as S from "./modify-page.style";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const ModifyPage = () => {
-  return (
-    <S.Container>
-      <MoblieIcon text="FITTING PAIR" />
-      <h1>MY PAGE</h1>
-      <S.InfoWrapper>
-        <MypageBox
-          label="닉네임"
-          text="닉네임"
-          icon={Icon}
-          validateText="다른 유저와 겹치 않도록 입력해주세요. (2~20자)"
-        />
-        <MypageBox
-          label="휴대폰 번호"
-          text="010-1234-1234"
-          icon={Phone}
-          validateText="11자리 입력해주세요."
-        />
-        <S.SEXBox>
-          <button>
-            <MdMale />
-          </button>
-          <hr />
-          <button>
-            <MdFemale />
-          </button>
-        </S.SEXBox>
-        <MypageBox label={"키(신장)"} text={"159cm"} icon={Ruler} />
-        <Button text="수정하기" type="button" />
-        <Button text="회원탈퇴" type="button" styleType="noBackground" />
-      </S.InfoWrapper>
-      <S.BlackLogo src={Logo} />
-    </S.Container>
-  );
+  const { data } = useGetUserInfo();
+
+  console.log(data);
+  if (data)
+    return (
+      <S.Container>
+        <MoblieIcon text="FITTING PAIR" />
+        <h1>MY PAGE</h1>
+        <S.InfoWrapper>
+          <MypageBox label="닉네임" text={data.userName} icon={Icon} />
+          <MypageBox label="휴대폰 번호" text={data.phoneNumber} icon={Phone} />
+          <S.SEXBox $male={data.gender === "male"}>
+            <p>성별</p>
+            <S.ButtonBox>
+              <button className="male">
+                <MdMale />
+              </button>
+              <hr />
+              <button className="female">
+                <MdFemale />
+              </button>
+            </S.ButtonBox>
+          </S.SEXBox>
+          <MypageBox label={"키(신장)"} text={data.height} icon={Ruler} />
+          <Button text="수정하기" type="button" />
+          <Button text="회원탈퇴" type="button" styleType="noBackground" />
+        </S.InfoWrapper>
+        <S.BlackLogo src={Logo} />
+      </S.Container>
+    );
 };
 
 export default ModifyPage;
