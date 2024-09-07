@@ -20,16 +20,13 @@ type TAuthProps = {
   gender: string;
 };
 
-type Tlogin = {
-  code: string;
-  message: string;
-  data: {
-    id: number;
-    userName: string;
-    refreshToken: string;
-    accessToken: string;
-  };
-};
+interface ILogin {
+  id: number;
+  userName: string;
+  refreshToken: string;
+  accessToken: string;
+  nickName: string;
+}
 
 type TSignup = {
   code: string;
@@ -61,4 +58,4 @@ type TSignupProps = {
   errors: Record<string, string>;
 };
 
-export type { TAuth, TPhone, TAuthProps, Tlogin, TSignup, TSignupProps, TUser };
+export type { TAuth, TPhone, TAuthProps, ILogin, TSignup, TSignupProps, TUser };

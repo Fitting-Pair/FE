@@ -20,7 +20,8 @@ const useLogin = () => {
 
       localStorage.setItem("accessToken", data.data.accessToken);
       localStorage.setItem("refreshToken", data.data.refreshToken);
-      setUserName(data.data.userName);
+      setUserName(data.data.nickName);
+      console.log(data.data.nickName);
 
       if (window.innerWidth <= 600) {
         // 모바일
