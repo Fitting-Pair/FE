@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 interface IUseFormProps<T> {
   initialValue: T;
-  validate: (values: T) => Record<keyof T, string>;
+  validate?: (values: T) => Record<keyof T, string>;
 }
 function useForm<T extends object>({
   initialValue,
@@ -82,8 +82,10 @@ function useForm<T extends object>({
   };
 
   useEffect(() => {
-    const newErrors = validate(values);
-    setErrors(newErrors);
+    if (validate) {
+      const newErrors = validate(values);
+      setErrors(newErrors);
+    }
   }, [validate, values]);
 
   return {

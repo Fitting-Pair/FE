@@ -8,6 +8,7 @@ import ResultDetail from "./detail/detail";
 import BodyCheckPage from "./body-check/body-check";
 import StylingPage from "./style/style-page";
 import ResultPage from "./result/result-page";
+import EditPage from "./edit/edit-page";
 
 export {
   Homepage,
@@ -20,4 +21,5 @@ export {
   BodyCheckPage,
   StylingPage,
   ResultPage,
+  EditPage,
 };
