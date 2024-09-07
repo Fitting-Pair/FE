@@ -5,11 +5,9 @@ import { PAGE_PATH } from "@/constants";
 import { login } from "@/apis/user";
 import { AxiosError } from "axios";
 import theme from "@/styles/theme";
-import useAuthStore from "@/store/useAuthStore";
 
 const useLogin = () => {
   const nav = useNavigate();
-  const { setUserName } = useAuthStore();
 
   return useMutation({
     mutationFn: login,
@@ -20,8 +18,6 @@ const useLogin = () => {
 
       localStorage.setItem("accessToken", data.data.accessToken);
       localStorage.setItem("refreshToken", data.data.refreshToken);
-      setUserName(data.data.nickName);
-      console.log(data.data.nickName);
 
       if (window.innerWidth <= 600) {
         // 모바일

@@ -8,8 +8,7 @@ const useEditUserInfo = (id: number) => {
   const nav = useNavigate();
   return useMutation({
     mutationFn: editUserInfo,
-    onSuccess: (data) => {
-      console.log(data.data.userName); //TODO: 유저이름 변경
+    onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: [QUERY_KEYS.AUTH] });
       nav(`${PAGE_PATH.MY_PAGE}/${PAGE_PATH.MODIFY}/${id}`);
     },
