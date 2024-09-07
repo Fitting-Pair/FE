@@ -70,7 +70,7 @@ export type {
   TAuth,
   TPhone,
   TAuthProps,
-  Tlogin,
+  ILogin,
   TSignup,
   TSignupProps,
   TUser,

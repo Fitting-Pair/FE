@@ -3,10 +3,10 @@ import axios, { AxiosResponse } from "axios";
 import {
   IUserInfo,
   TAuthProps,
-  Tlogin,
   TPhone,
   TSignup,
   TUser,
+  ILogin,
 } from "@/types/auth";
 import { axiosInstance } from "./axiosInstance";
 
