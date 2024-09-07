@@ -5,6 +5,7 @@ import Submit from "./common/submit-btn/submit-btn";
 import Input from "./common/input/input";
 import Icon from "./common/icon/icon";
 import MoblieIcon from "./common/mobile-icon/mobile-icon";
+import Button from "./common/button/button";
 
 // signup
 import SexButton from "./signup/sex-button";
@@ -35,4 +36,5 @@ export {
   ResultPaper,
   TopComponent,
   MypageBox,
+  Button,
 };

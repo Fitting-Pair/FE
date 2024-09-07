@@ -5,12 +5,14 @@ interface TInputProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: string;
   label?: string;
   text: string;
+  validateText?: string;
 }
 
-const MypageBox = ({ icon, label, text }: TInputProps) => {
+const MypageBox = ({ icon, label, text, validateText }: TInputProps) => {
   return (
     <S.Container>
       <label>{label}</label>
+      <p>{validateText}</p>
       <S.Box>
         <p>{text}</p>
         <img src={icon} />
