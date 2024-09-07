@@ -37,8 +37,9 @@ const MyPage = () => {
           {data?.map((e: TResultProps) => (
             <SwiperSlide key={e.resultId}>
               <S.PreviousData
-                onClick={() => nav(`/my-page/result/${e.resultId}`)}>
-                <ResultPaper result={e} userInfo={userInfo} />
+                onClick={() => nav(`/my-page/result/${e.resultId}`)}
+              >
+                <ResultPaper result={e} />
               </S.PreviousData>
               <S.MyPageDate>{e.localDate.split("T")[0]}</S.MyPageDate>
             </SwiperSlide>
