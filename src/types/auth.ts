@@ -61,4 +61,21 @@ type TSignupProps = {
   errors: Record<string, string>;
 };
 
-export type { TAuth, TPhone, TAuthProps, Tlogin, TSignup, TSignupProps, TUser };
+interface IUserInfo {
+  id: number;
+  userName: string;
+  phoneNumber: string;
+  height: number;
+  gender: string;
+}
+
+export type {
+  TAuth,
+  TPhone,
+  TAuthProps,
+  Tlogin,
+  TSignup,
+  TSignupProps,
+  TUser,
+  IUserInfo,
+};
