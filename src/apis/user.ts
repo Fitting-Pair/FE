@@ -33,7 +33,9 @@ const signup = async ({
   return data;
 };
 
-const login = async ({ phoneNumber }: TPhone): Promise<Tlogin> => {
+const login = async ({
+  phoneNumber,
+}: TPhone): Promise<CustomResponse<ILogin>> => {
   const { data } = await axios.post(
     `${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.LOGIN}`,
     {
