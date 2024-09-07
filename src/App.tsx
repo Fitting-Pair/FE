@@ -11,6 +11,7 @@ import {
   BodyCheckPage,
   StylingPage,
   ResultPage,
+  EditPage,
 } from "./pages";
 import { PAGE_PATH } from "@/constants";
 
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.MODIFY}/:id`,
         element: <ModifyPage />,
+      },
+      {
+        path: `${PAGE_PATH.EDIT}/:id`,
+        element: <EditPage />,
       },
     ],
   },

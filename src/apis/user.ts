@@ -1,6 +1,13 @@
 import { API_PATH } from "@/constants";
 import axios, { AxiosResponse } from "axios";
-import { TAuthProps, Tlogin, TPhone, TSignup, TUser } from "@/types/auth";
+import {
+  IUserInfo,
+  TAuthProps,
+  TPhone,
+  TSignup,
+  TUser,
+  ILogin,
+} from "@/types/auth";
 import { axiosInstance } from "./axiosInstance";
 
 interface CustomResponse<T> extends AxiosResponse {
@@ -26,7 +33,9 @@ const signup = async ({
   return data;
 };
 
-const login = async ({ phoneNumber }: TPhone): Promise<Tlogin> => {
+const login = async ({
+  phoneNumber,
+}: TPhone): Promise<CustomResponse<ILogin>> => {
   const { data } = await axios.post(
     `${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.LOGIN}`,
     {
@@ -52,4 +61,16 @@ const getUserInfo = async (): Promise<CustomResponse<TUser>> => {
   return data;
 };
 
-export { login, signup, logout, getUserInfo };
+const editUserInfo = async ({
+  userName,
+}: {
+  userName: string;
+}): Promise<CustomResponse<IUserInfo>> => {
+  const { data } = await axiosInstance.put(`${API_PATH.EDIT_INFO}`, {
+    userName,
+  });
+
+  return data;
+};
+
+export { login, signup, logout, getUserInfo, editUserInfo };

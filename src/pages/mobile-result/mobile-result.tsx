@@ -2,14 +2,14 @@ import * as S from "./mobile-result.style";
 
 import { useEffect } from "react";
 import { Loading, MoblieIcon } from "@/components";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useGetResult from "@/hooks/queries/results/useGetResult";
-import { TUser } from "@/types/auth";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const MoblieResultPage = () => {
-  const { state }: { state: TUser } = useLocation();
   const { id } = useParams();
 
+  const { data: userInfo, isPending: infoPending } = useGetUserInfo();
   const nav = useNavigate();
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const MoblieResultPage = () => {
 
   const { data, isPending } = useGetResult(Number(id));
 
-  if (isPending) {
+  if (isPending || infoPending) {
     return (
       <S.LoadingContainer>
         <Loading text={"불러오는중 ..."} />;
@@ -26,13 +26,13 @@ const MoblieResultPage = () => {
     );
   }
 
-  if (data && state)
+  if (data && userInfo)
     return (
       <S.Container>
         <MoblieIcon text={data.localDate.split("T")[0]} />
         <S.ResultWrapper>
           <S.Title>
-            {state.userName}, <br /> <span>{data.bodyTypeName}</span>{" "}
+            {userInfo.userName}, <br /> <span>{data.bodyTypeName}</span>{" "}
             체형입니다.
           </S.Title>
           <S.ResultImg src={data.objFile} />

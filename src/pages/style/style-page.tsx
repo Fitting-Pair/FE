@@ -16,6 +16,7 @@ import { getBodyCheckResult } from "@/apis/results";
 import { TData, TSelectCloth } from "@/types/result";
 import usePostResult from "@/hooks/queries/results/usePostResult";
 import { Triangle, Reactangle, Round } from "@/assets/images/body-check";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const StylingPage = () => {
   const { imgId } = useParams();
@@ -27,6 +28,7 @@ const StylingPage = () => {
   });
 
   const { mutate } = usePostResult(Number(result?.resultId));
+  const { data: userInfo, isPending } = useGetUserInfo();
 
   const fetchResult = async () => {
     try {
@@ -61,9 +63,9 @@ const StylingPage = () => {
     });
   };
 
-  if (loading) {
+  if (loading || isPending) {
     return <Loading text={"분석중 ..."} />;
-  } else if (!loading && result) {
+  } else if (!loading && result && userInfo) {
     return (
       <S.Container>
         <Icon blackNum={2} />
@@ -72,7 +74,7 @@ const StylingPage = () => {
             <img src={Reactangle} alt="icons" className="reactangle" />
             <S.ResultSize>
               <S.ResultTitle>
-                000님,
+                {userInfo.userName}님,
                 <br />
                 <span>{result.bodyTypeName}</span> 체형입니다.
               </S.ResultTitle>

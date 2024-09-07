@@ -13,6 +13,7 @@ const PAGE_PATH = {
   MODIFY: "modify",
   RESULT: "result",
   DETAIL: "detail",
+  EDIT: "edit",
 };
 
 const API_PATH = {
@@ -33,6 +34,7 @@ const API_PATH = {
   // my-page
   MYPAGE: "mypage",
   MYPAGE_RESULT: "/mypage/result",
+  EDIT_INFO: "/mypage/info",
 };
 
 export { PAGE_PATH, API_PATH };

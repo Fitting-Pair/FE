@@ -5,6 +5,7 @@ import Submit from "./common/submit-btn/submit-btn";
 import Input from "./common/input/input";
 import Icon from "./common/icon/icon";
 import MoblieIcon from "./common/mobile-icon/mobile-icon";
+import Button from "./common/button/button";
 
 // signup
 import SexButton from "./signup/sex-button";
@@ -18,6 +19,7 @@ import TopComponent from "./bodycheck/cloth/top/top";
 // mypage
 import SwiperComponent from "./mypage/swiper";
 import ResultPaper from "./mypage/result/result";
+import MypageBox from "./common/mypage-box/mypage-box";
 
 export {
   Loading,
@@ -33,4 +35,6 @@ export {
   SwiperComponent,
   ResultPaper,
   TopComponent,
+  MypageBox,
+  Button,
 };
