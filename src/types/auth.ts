@@ -58,6 +58,7 @@ type TSignupProps = {
   errors: Record<string, string>;
 };
 
+
 interface IUserInfo {
   id: number;
   userName: string;
