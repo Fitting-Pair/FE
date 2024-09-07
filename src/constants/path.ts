@@ -13,6 +13,7 @@ const PAGE_PATH = {
   MODIFY: "modify",
   RESULT: "result",
   DETAIL: "detail",
+  EDIT: "edit",
 };
 
 const API_PATH = {

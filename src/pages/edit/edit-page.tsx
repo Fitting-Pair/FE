@@ -1,27 +1,33 @@
 import { Button, MoblieIcon, MypageBox } from "@/components";
+import * as S from "../modify/modify-page.style";
 import Icon from "@/assets/images/icon.png";
 import Phone from "@/assets/images/phone.png";
 import Logo from "@/assets/images/Logo-black.png";
 import Ruler from "@/assets/images/ruler.png";
-import { MdMale, MdFemale } from "react-icons/md";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
-import { useNavigate } from "react-router-dom";
-import { PAGE_PATH } from "@/constants";
+import { MdMale, MdFemale } from "react-icons/md";
 
-import * as S from "./modify-page.style";
-
-const ModifyPage = () => {
+const EditPage = () => {
   const { data } = useGetUserInfo();
-  const nav = useNavigate();
-
   if (data)
     return (
       <S.Container>
         <MoblieIcon text="FITTING PAIR" />
-        <h1>MY PAGE</h1>
+        <h1>EDIT</h1>
         <S.InfoWrapper>
-          <MypageBox label="닉네임" text={data.userName} icon={Icon} />
-          <MypageBox label="휴대폰 번호" text={data.phoneNumber} icon={Phone} />
+          <MypageBox
+            edit={true}
+            label="닉네임"
+            text={data.userName}
+            icon={Icon}
+            validateText="5자 이내로 입력해주세요."
+          />
+          <MypageBox
+            label="휴대폰 번호"
+            text={data.phoneNumber}
+            icon={Phone}
+            noClick={true}
+          />
           <S.SEXBox $male={data.gender === "male"}>
             <p>성별</p>
             <S.ButtonBox>
@@ -34,14 +40,14 @@ const ModifyPage = () => {
               </button>
             </S.ButtonBox>
           </S.SEXBox>
-          <MypageBox label={"키(신장)"} text={data.height} icon={Ruler} />
-          <Button
-            text="수정하기"
-            type="button"
-            onClick={() =>
-              nav(`${PAGE_PATH.MY_PAGE}/${PAGE_PATH.EDIT}/${data.id}`)
-            }
+          <MypageBox
+            label={"키(신장)"}
+            text={data.height}
+            icon={Ruler}
+            edit={true}
+            maxLength={3}
           />
+          <Button text="완료" type="button" />
           <Button text="회원탈퇴" type="button" styleType="noBackground" />
         </S.InfoWrapper>
         <S.BlackLogo src={Logo} />
@@ -49,4 +55,4 @@ const ModifyPage = () => {
     );
 };
 
-export default ModifyPage;
+export default EditPage;

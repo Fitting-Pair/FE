@@ -1,6 +1,10 @@
 import theme from "@/styles/theme";
 import styled from "styled-components";
 
+interface BoxProps {
+  $noClick: boolean;
+}
+
 const Container = styled.div`
   width: 95%;
   display: flex;
@@ -22,7 +26,32 @@ const Container = styled.div`
   }
 `;
 
-const Box = styled.div`
+const Box = styled.div<BoxProps>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  gap: 10px;
+  background-color: ${({ $noClick }) =>
+    $noClick ? "#e6e6e6" : theme.COLOR.WHITE};
+
+  p {
+    color: ${({ $noClick }) => ($noClick ? "#d1cfcf" : "#807e7d")};
+
+    font-weight: 700;
+  }
+
+  input {
+    border: none;
+    flex: 1;
+    color: ${theme.COLOR.BLACK};
+    font-weight: 700;
+    outline: none;
+  }
+`;
+
+const InputBox = styled.input`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,4 +67,4 @@ const Box = styled.div`
   }
 `;
 
-export { Container, Box };
+export { Container, Box, InputBox };
