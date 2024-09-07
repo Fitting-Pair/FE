@@ -13,7 +13,6 @@ import * as Style from "./edit-page.style";
 
 const EditPage = () => {
   const { data } = useGetUserInfo();
-
   const { mutate } = useEditUserInfo(data?.id as number);
 
   const editForm = useForm({

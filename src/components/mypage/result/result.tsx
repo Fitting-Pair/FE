@@ -2,7 +2,7 @@ import { TResultProps } from "@/types/result";
 import LOGO from "@/assets/images/Logo.webp";
 
 import * as S from "./result.style";
-import useAuthStore from "@/store/useAuthStore";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 interface ResultProps {
   result: TResultProps;
@@ -17,15 +17,16 @@ const ResultPaper = ({ result }: ResultProps) => {
     bodyTypeFeature,
   } = result;
 
-  const { userName } = useAuthStore();
-  if (userName)
+  const { data } = useGetUserInfo();
+
+  if (data)
     return (
       <S.Container>
         <S.ResultWrapper>
           <S.UserWrapper>
             <S.ResultTitle>
               <S.UserBody>
-                {userName},
+                {data?.userName},
                 <br />
                 <span>{bodyTypeName}</span> 체형입니다.
               </S.UserBody>
