@@ -34,14 +34,14 @@ axiosInstance.interceptors.response.use(
     if (
       error.config &&
       error.response &&
-      error.response.code === 401 &&
+      error.response.status === 401 &&
       !error.config._retry
     ) {
       error.config._retry = true;
       const refreshtoken = localStorage.getItem("refreshToken");
       error.config.headers.Refresh = `${refreshtoken}`;
       return axios
-        .post(`${import.meta.env.VITE_API_URL}/${API_PATH.REFRESH}`, {
+        .get(`${import.meta.env.VITE_API_URL}/${API_PATH.REFRESH}`, {
           headers: {
             Refresh: `${refreshtoken}`,
           },
