@@ -8,6 +8,14 @@ body {
   overflow-x: hidden;
 }
 
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
 @font-face {
   font-family: "Inter-Bold";
   src: url(@/assets/fonts/Inter-Bold.ttf);

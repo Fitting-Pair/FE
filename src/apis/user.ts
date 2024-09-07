@@ -1,7 +1,12 @@
 import { API_PATH } from "@/constants";
-import axios from "axios";
-import { TAuthProps, Tlogin, TPhone, TSignup } from "@/types/auth";
+import axios, { AxiosResponse } from "axios";
+import { TAuthProps, Tlogin, TPhone, TSignup, TUser } from "@/types/auth";
 import { axiosInstance } from "./axiosInstance";
+
+interface CustomResponse<T> extends AxiosResponse {
+  message: string;
+  data: T;
+}
 
 const signup = async ({
   userName,
@@ -41,4 +46,10 @@ const logout = async () => {
   return data;
 };
 
-export { login, signup, logout };
+const getUserInfo = async (): Promise<CustomResponse<TUser>> => {
+  const { data } = await axiosInstance.get(`${API_PATH.MYPAGE}/info`);
+
+  return data;
+};
+
+export { login, signup, logout, getUserInfo };

@@ -15,6 +15,7 @@ import { ApparelSwiper } from "@/components";
 import { getBodyCheckResult } from "@/apis/results";
 import { TData, TSelectCloth } from "@/types/result";
 import usePostResult from "@/hooks/queries/results/usePostResult";
+import { Triangle, Reactangle, Round } from "@/assets/images/body-check";
 
 const StylingPage = () => {
   const { imgId } = useParams();
@@ -66,26 +67,66 @@ const StylingPage = () => {
     return (
       <S.Container>
         <Icon blackNum={2} />
-
         <S.ContentResultContainer>
-          <S.ResultWrapper>
-            <S.ResultTitle>
-              당신은 <span>{result.bodyTypeName}</span> 체형입니다.
-            </S.ResultTitle>
+          <S.ResultBodyType>
+            <img src={Reactangle} alt="icons" className="reactangle" />
+            <S.ResultSize>
+              <S.ResultTitle>
+                000님,
+                <br />
+                <span>{result.bodyTypeName}</span> 체형입니다.
+              </S.ResultTitle>
+              <S.BodySizeWrapper>
+                <h5>*신체치수</h5>
+                <ul>
+                  <li>
+                    키(신장) : <b>{result.userBodySizeResponseDto.height}cm</b>
+                  </li>
+                  <li>
+                    어깨 단면 :
+                    <b>
+                      {Math.round(result.userBodySizeResponseDto.shoulderSize)}
+                      cm
+                    </b>
+                  </li>
+                  <li>
+                    가슴 둘레 :
+                    <b>
+                      {Math.round(result.userBodySizeResponseDto.chestSize)}cm
+                    </b>
+                  </li>
+                  <li>
+                    허리 둘레 :
+                    <b>
+                      {Math.round(result.userBodySizeResponseDto.waistSize)}cm
+                    </b>
+                  </li>
+                  <li>
+                    엉덩이 둘레 :
+                    <b>
+                      {Math.round(result.userBodySizeResponseDto.hipSize)}cm
+                    </b>
+                  </li>
+                </ul>
+              </S.BodySizeWrapper>
+            </S.ResultSize>
             <S.ResultImg>
               <img src={result.objFile} />
             </S.ResultImg>
-            <S.ResultExplainWrapper>
-              <S.ContentWrapper>
-                <span>체형 특징</span>
-                <p>{result.bodyTypeFeature}</p>
-              </S.ContentWrapper>
-              <S.ContentWrapper>
-                <span>코디 주의사항</span>
-                <p>{result.bodyTypeCareful}</p>
-              </S.ContentWrapper>
-            </S.ResultExplainWrapper>
-          </S.ResultWrapper>
+          </S.ResultBodyType>
+
+          <S.ResultExplainWrapper>
+            <S.ContentWrapper>
+              <img src={Triangle} alt="icons" />
+              <span>- 체형 특징</span>
+              <p>{result.bodyTypeFeature}</p>
+            </S.ContentWrapper>
+            <S.ContentWrapper>
+              <img src={Round} alt="icons" />
+              <span>- 코디 주의사항</span>
+              <p>{result.bodyTypeCareful}</p>
+            </S.ContentWrapper>
+          </S.ResultExplainWrapper>
 
           <S.ClothWrapper>
             <S.Category>상의</S.Category>
@@ -119,7 +160,6 @@ const StylingPage = () => {
               </ApparelSwiper>
             </S.Slider>
           </S.ClothWrapper>
-
           <S.Button onClick={handleSubmit}>결과지 제작</S.Button>
         </S.ContentResultContainer>
       </S.Container>
