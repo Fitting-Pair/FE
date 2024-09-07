@@ -5,10 +5,14 @@ import { Loading, MoblieIcon } from "@/components";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import useGetResult from "@/hooks/queries/results/useGetResult";
 import { TUser } from "@/types/auth";
+import useAuthStore from "@/store/useAuthStore";
 
 const MoblieResultPage = () => {
   const { state }: { state: TUser } = useLocation();
   const { id } = useParams();
+
+  const { userName } = useAuthStore();
+  console.log(userName);
 
   const nav = useNavigate();
 
