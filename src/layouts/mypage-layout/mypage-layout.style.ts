@@ -5,6 +5,7 @@ const Container = styled.div`
   background-color: ${theme.COLOR.BACKGROUND};
   height: 100dvh;
   ${theme.ALIGN.COLUMN_CENTER};
+  overflow-x: hidden;
 `;
 
 const OutletContainer = styled.div`
