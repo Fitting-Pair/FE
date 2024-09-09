@@ -6,4 +6,29 @@ const InfoForm = styled.form`
   width: 98%;
 `;
 
-export { InfoForm };
+const ButtonBox = styled.div`
+  ${theme.ALIGN.ROW_SPACE_BETWEEN};
+
+  div {
+    ${theme.ALIGN.ROW_CENTER};
+    width: 100%;
+    border: none;
+    height: 44px;
+  }
+
+  .male {
+    background-color: #e6e6e6;
+    svg {
+      opacity: 0.4;
+    }
+  }
+
+  .female {
+    background-color: #e6e6e6;
+    svg {
+      opacity: 0.4;
+    }
+  }
+`;
+
+export { InfoForm, ButtonBox };

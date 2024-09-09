@@ -74,7 +74,8 @@ const SEXBox = styled.div<BoxProps>`
 const ButtonBox = styled.div`
   ${theme.ALIGN.ROW_SPACE_BETWEEN};
 
-  button {
+  div {
+    ${theme.ALIGN.ROW_CENTER};
     width: 100%;
     border: none;
     height: 44px;
