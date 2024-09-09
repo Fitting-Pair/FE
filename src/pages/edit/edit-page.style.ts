@@ -19,6 +19,7 @@ const ButtonBox = styled.div`
   .male {
     background-color: #e6e6e6;
     svg {
+      color: ${theme.COLOR.WHITE};
       opacity: 0.4;
     }
   }
@@ -26,6 +27,7 @@ const ButtonBox = styled.div`
   .female {
     background-color: #e6e6e6;
     svg {
+      color: ${theme.COLOR.WHITE};
       opacity: 0.4;
     }
   }

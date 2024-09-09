@@ -32,7 +32,7 @@ const MoblieResultPage = () => {
         <MoblieIcon text={data.localDate.split("T")[0]} />
         <S.ResultWrapper>
           <S.Title>
-            {userInfo.userName}, <br /> <span>{data.bodyTypeName}</span>{" "}
+            {userInfo.userName} 님, <br /> <span>{data.bodyTypeName}</span>{" "}
             체형입니다.
           </S.Title>
           <S.ResultImg src={data.objFile} />

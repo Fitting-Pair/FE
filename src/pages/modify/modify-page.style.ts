@@ -26,7 +26,6 @@ const Container = styled.div`
     font-family: ${theme.FONT.JIMHURIA_REGULAR};
     font-size: 128px;
     text-align: center;
-    letter-spacing: 0.2rem;
   }
 `;
 

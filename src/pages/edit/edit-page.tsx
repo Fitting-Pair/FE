@@ -74,7 +74,6 @@ const EditPage = () => {
             maxLength={3}
           />
           <Button text="완료" />
-          <Button text="회원탈퇴" type="button" styleType="noBackground" />
         </Style.InfoForm>
         <S.BlackLogo src={Logo} />
       </S.Container>
