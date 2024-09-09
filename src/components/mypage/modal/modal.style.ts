@@ -31,16 +31,18 @@ const Text = styled.p`
   color: #6e6c6a;
   opacity: 0.8;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 12px;
+  word-break: break-all;
 `;
 
 const Cancel = styled.button`
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 20px;
+  left: 10px;
   border: none;
   background-color: transparent;
   font-weight: bold;
+  color: ${theme.COLOR.BLACK};
   cursor: pointer;
 `;
 
