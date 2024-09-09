@@ -73,4 +73,10 @@ const editUserInfo = async ({
   return data;
 };
 
-export { login, signup, logout, getUserInfo, editUserInfo };
+const deleteUser = async (): Promise<AxiosResponse> => {
+  const { data } = await axiosInstance.delete(`${API_PATH.USERS}`);
+
+  return data;
+};
+
+export { login, signup, logout, getUserInfo, editUserInfo, deleteUser };
