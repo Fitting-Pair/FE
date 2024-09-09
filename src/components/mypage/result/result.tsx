@@ -1,87 +1,57 @@
 import { TResultProps } from "@/types/result";
-import LOGO from "@/assets/images/Logo.webp";
+import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 import * as S from "./result.style";
-import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 interface ResultProps {
   result: TResultProps;
 }
 
 const ResultPaper = ({ result }: ResultProps) => {
-  const {
-    bodyTypeName,
-    objFile,
-    userStylingResponseDto,
-    bodyTypeCareful,
-    bodyTypeFeature,
-  } = result;
-
   const { data } = useGetUserInfo();
 
   if (data)
     return (
       <S.Container>
         <S.ResultWrapper>
-          <S.UserWrapper>
+          <S.Wrapper>
             <S.ResultTitle>
-              <S.UserBody>
-                {data?.userName},
-                <br />
-                <span>{bodyTypeName}</span> 체형입니다.
-              </S.UserBody>
-              <S.BodySizeWrapper>
-                <div>*신체 치수</div>
-                <ul>
-                  <li> 키(신장) : {result.userBodySizeResponseDto.height}cm</li>
-                  <li>
-                    어깨 단면 :
-                    {Math.round(result.userBodySizeResponseDto.shoulderSize)}
-                    cm
-                  </li>
-                  <li>
-                    가슴 둘레 :
-                    {Math.round(result.userBodySizeResponseDto.chestSize)}cm
-                  </li>
-                  <li>
-                    허리 둘레 :
-                    {Math.round(result.userBodySizeResponseDto.waistSize)}cm
-                  </li>
-                  <li>
-                    엉덩이 둘레 :
-                    {Math.round(result.userBodySizeResponseDto.hipSize)}cm
-                  </li>
-                </ul>
-              </S.BodySizeWrapper>
+              {data.userName}, <span>{result.bodyTypeName}</span> 체형입니다.
             </S.ResultTitle>
             <S.BodyImg>
-              <img src={objFile} />
+              <img src={result.objFile} />
             </S.BodyImg>
-          </S.UserWrapper>
-          <S.ResultExplainWrapper>
-            <S.ContentWrapper>
-              <span>체형 특징</span>
-              <p>{bodyTypeFeature.substring(0, 60)} ...</p>
-            </S.ContentWrapper>
-            <S.ContentWrapper>
-              <span>코디 주의사항</span>
-              <p>{bodyTypeCareful.substring(0, 60)} ...</p>
-            </S.ContentWrapper>
-          </S.ResultExplainWrapper>
-          <S.FooterWrapper>
+            <S.ResultExplainWrapper>
+              <S.ContentWrapper>
+                <span>체형 특징</span>
+                <p>{result.bodyTypeFeature.substring(0, 80)}...</p>
+              </S.ContentWrapper>
+              <S.ContentWrapper>
+                <span>코디 주의사항</span>
+                <p>{result.bodyTypeCareful.substring(0, 80)}...</p>
+              </S.ContentWrapper>
+            </S.ResultExplainWrapper>
             <S.ClothWrapper>
+              <span>나만의 의류 리스트</span>
               <section>
-                <img src={userStylingResponseDto.userTopClothesDto.imageUrl} />
-
-                <img
-                  src={
-                    userStylingResponseDto.userBottomClothesItemsDto.imageUrl
-                  }
-                />
+                <div>
+                  <img
+                    src={
+                      result.userStylingResponseDto.userTopClothesDto.imageUrl
+                    }
+                  />
+                </div>
+                <div>
+                  <img
+                    src={
+                      result.userStylingResponseDto.userBottomClothesItemsDto
+                        .imageUrl
+                    }
+                  />
+                </div>
               </section>
             </S.ClothWrapper>
-            <img src={LOGO} alt="logo" />
-          </S.FooterWrapper>
+          </S.Wrapper>
         </S.ResultWrapper>
       </S.Container>
     );
