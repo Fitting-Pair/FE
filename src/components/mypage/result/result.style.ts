@@ -1,122 +1,102 @@
-import styled from "styled-components";
 import theme from "@/styles/theme";
+import styled from "styled-components";
 
 const Container = styled.div`
-  ${theme.ALIGN.ROW_CENTER};
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: ${theme.COLOR.BACKGROUND};
 `;
 
 const ResultTitle = styled.div`
-  ${theme.ALIGN.COLUMN_CENTER};
   font-family: ${theme.FONT.JIMHURIA_REGULAR};
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 900;
+  margin-top: 15px;
   letter-spacing: 0.2px;
-  padding-left: 10px;
+  padding: 5px;
 
   span {
-    color: ${theme.COLOR.ORANGE};
+    color: #ffc791;
   }
 `;
 
 const ResultWrapper = styled.div`
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 90%;
+  ${theme.ALIGN.COLUMN_CENTER};
+  width: 100%;
+  height: 100%;
+  background-color: ${theme.COLOR.BACKGROUND};
+  opacity: 0.95;
 `;
 
 const ResultExplainWrapper = styled.div`
   width: 100%;
-  ${theme.ALIGN.COLUMN_CENTER};
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 `;
 
 const ContentWrapper = styled.div`
-  width: 100%;
-  padding: 10px 10px;
-  background-color: ${theme.COLOR.WHITE};
-  border-radius: 10px;
-  margin-top: 10px;
+  height: 50%;
+  ${theme.ALIGN.COLUMN_CENTER};
+  text-align: center;
+
+  margin: 0 15px;
   font-size: 0.4rem;
   font-family: ${theme.FONT.ROBOTO_MEDIUM};
 
   span {
-    font-weight: 600;
-  }
-
-  p {
-    margin-top: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    font-weight: bold;
   }
 `;
 
 const BodyImg = styled.div`
-  ${theme.ALIGN.ROW_CENTER};
   img {
     height: 90px;
-    object-fit: contain;
+    object-fit: cover;
   }
 `;
 
 const ClothWrapper = styled.div`
-  width: 50%;
-  margin-top: 10px;
-  ${theme.ALIGN.ROW_CENTER};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  span {
+    ${theme.ALIGN.COLUMN_CENTER};
+    font-family: ${theme.FONT.JIMHURIA_REGULAR};
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
   section {
     ${theme.ALIGN.ROW_CENTER};
-
     img {
-      ${theme.ALIGN.ROW_CENTER};
-      background-color: ${theme.COLOR.WHITE};
-      margin: 0px 10px;
-      border-radius: 5px;
-      width: 40px;
-      height: 40px;
+      width: 45px;
+      height: 45px;
       object-fit: cover;
+      border-radius: 5px;
     }
+    margin-bottom: 15px;
   }
-`;
 
-const UserWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  background-color: ${theme.COLOR.WHITE};
-  border-radius: 10px;
-  width: 100%;
-  height: 130px;
-  padding: 0 10px;
-`;
-
-const FooterWrapper = styled.div`
-  margin-top: 5px;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 5px;
-
-  img {
-    width: 80px;
-    object-fit: contain;
-  }
-`;
-
-const UserBody = styled.div``;
-
-const BodySizeWrapper = styled.div`
   div {
-    font-size: 8px;
+    ${theme.ALIGN.ROW_CENTER};
+    background-color: white;
+    margin: 0px 10px;
+    border-radius: 24px;
+    box-shadow: 0px 6px 20px -8px rgba(0, 0, 0, 0.5);
   }
-  li {
-    font-size: 6px;
-  }
-  margin-top: 10px;
-  margin-left: 10px;
+`;
+
+const Wrapper = styled.div`
+  ${theme.ALIGN.COLUMN_CENTER};
+  background-color: ${theme.COLOR.WHITE};
+  border-radius: 15px;
+  width: 90%;
 `;
 
 export {
@@ -127,8 +107,5 @@ export {
   Container,
   ContentWrapper,
   ResultWrapper,
-  UserWrapper,
-  FooterWrapper,
-  UserBody,
-  BodySizeWrapper,
+  Wrapper,
 };
