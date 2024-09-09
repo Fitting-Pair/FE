@@ -63,11 +63,14 @@ const getUserInfo = async (): Promise<CustomResponse<TUser>> => {
 
 const editUserInfo = async ({
   userName,
+  height,
 }: {
   userName: string;
+  height: number;
 }): Promise<CustomResponse<IUserInfo>> => {
   const { data } = await axiosInstance.put(`${API_PATH.EDIT_INFO}`, {
     userName,
+    height,
   });
 
   return data;

@@ -18,13 +18,17 @@ const EditPage = () => {
   const editForm = useForm({
     initialValue: {
       userName: data?.userName ?? "",
+      height: data?.height ?? "",
     },
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (data) {
-      mutate({ userName: editForm.values.userName });
+      mutate({
+        userName: editForm.values.userName,
+        height: Number(editForm.values.height),
+      });
     }
   };
 
@@ -41,6 +45,7 @@ const EditPage = () => {
             text={data.userName}
             icon={Icon}
             validateText="5자 이내로 입력해주세요."
+            maxLength={5}
           />
           <MypageBox
             label="휴대폰 번호"
@@ -50,21 +55,23 @@ const EditPage = () => {
           />
           <S.SEXBox $male={data.gender === "male"}>
             <p>성별</p>
-            <S.ButtonBox>
-              <button className="male">
+            <Style.ButtonBox>
+              <div className="male">
                 <MdMale />
-              </button>
+              </div>
               <hr />
-              <button className="female">
+              <div className="female">
                 <MdFemale />
-              </button>
-            </S.ButtonBox>
+              </div>
+            </Style.ButtonBox>
           </S.SEXBox>
           <MypageBox
+            {...editForm.getTextInputProps("height")}
             label={"키(신장)"}
             text={data.height}
             icon={Ruler}
-            noClick={true}
+            edit={true}
+            maxLength={3}
           />
           <Button text="완료" />
           <Button text="회원탈퇴" type="button" styleType="noBackground" />

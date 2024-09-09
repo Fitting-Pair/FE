@@ -28,13 +28,13 @@ const ModifyPage = () => {
           <S.SEXBox $male={data.gender === "male"}>
             <p>성별</p>
             <S.ButtonBox>
-              <button className="male">
+              <div className="male">
                 <MdMale />
-              </button>
+              </div>
               <hr />
-              <button className="female">
+              <div className="female">
                 <MdFemale />
-              </button>
+              </div>
             </S.ButtonBox>
           </S.SEXBox>
           <MypageBox label={"키(신장)"} text={data.height} icon={Ruler} />
