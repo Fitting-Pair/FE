@@ -63,14 +63,23 @@ const getUserInfo = async (): Promise<CustomResponse<TUser>> => {
 
 const editUserInfo = async ({
   userName,
+  height,
 }: {
   userName: string;
+  height: number;
 }): Promise<CustomResponse<IUserInfo>> => {
   const { data } = await axiosInstance.put(`${API_PATH.EDIT_INFO}`, {
     userName,
+    height,
   });
 
   return data;
 };
 
-export { login, signup, logout, getUserInfo, editUserInfo };
+const deleteUser = async (): Promise<AxiosResponse> => {
+  const { data } = await axiosInstance.delete(`${API_PATH.USERS}`);
+
+  return data;
+};
+
+export { login, signup, logout, getUserInfo, editUserInfo, deleteUser };

@@ -23,6 +23,7 @@ const API_PATH = {
   SIGN_UP: "signup",
   LOGOUT: "logout",
   REFRESH: "auth/reissue-token",
+  USERS: "users",
 
   // image
   UPLOAD_USER_IMAGE: "/userimg/upload",

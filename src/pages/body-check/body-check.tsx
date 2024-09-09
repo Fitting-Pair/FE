@@ -1,7 +1,6 @@
 import * as S from "./body-check.style";
 
 import { Icon, WebcamComponent } from "@/components";
-// import Webcam from "../../components/Webcam/Webcam";
 
 const BodyCheckPage = () => {
   return (
