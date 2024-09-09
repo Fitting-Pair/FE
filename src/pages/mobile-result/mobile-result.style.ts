@@ -9,10 +9,9 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: ${theme.FONT.JIMHURIA_REGULAR};
+  font-family: ${theme.FONT.INTER_BOLD};
   font-size: 32px;
   margin-top: 40px;
-  font-weight: 900;
 
   span {
     color: ${theme.COLOR.ORANGE};

@@ -8,12 +8,12 @@ const Container = styled.div`
 `;
 
 const ResultTitle = styled.div`
-  font-family: ${theme.FONT.JIMHURIA_REGULAR};
-  font-size: 14px;
-  font-weight: 900;
+  font-family: ${theme.FONT.ROBOTO_BOLD};
+  font-size: 12px;
   margin-top: 15px;
   letter-spacing: 0.2px;
   padding: 5px;
+  ${theme.ALIGN.ROW_CENTER};
 
   span {
     color: #ffc791;

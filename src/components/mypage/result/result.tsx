@@ -16,7 +16,8 @@ const ResultPaper = ({ result }: ResultProps) => {
         <S.ResultWrapper>
           <S.Wrapper>
             <S.ResultTitle>
-              {data.userName}, <span>{result.bodyTypeName}</span> 체형입니다.
+              {data.userName}님, &nbsp; <span>{result.bodyTypeName}</span>
+              체형입니다.
             </S.ResultTitle>
             <S.BodyImg>
               <img src={result.objFile} />

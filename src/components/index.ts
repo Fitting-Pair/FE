@@ -20,7 +20,7 @@ import TopComponent from "./bodycheck/cloth/top/top";
 import SwiperComponent from "./mypage/swiper";
 import ResultPaper from "./mypage/result/result";
 import MypageBox from "./common/mypage-box/mypage-box";
-import Modal from "./signup/modal/modal";
+import Modal from "./mypage/modal/modal";
 
 export {
   Loading,
