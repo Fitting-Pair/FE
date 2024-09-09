@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const InfoForm = styled.form`
   ${theme.ALIGN.COLUMN_CENTER};
-  width: 98%;
+  width: 96%;
 `;
 
 const ButtonBox = styled.div`

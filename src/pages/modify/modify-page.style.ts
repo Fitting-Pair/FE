@@ -84,7 +84,7 @@ const ButtonBox = styled.div`
 
 const InfoWrapper = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
-  width: 98%;
+  width: 96%;
 `;
 
 const BlackLogo = styled.img`
