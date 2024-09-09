@@ -5,7 +5,7 @@ import { useMutation } from "@tanstack/react-query";
 const useDeleteUser = () => {
   return useMutation({
     mutationFn: deleteUser,
-    onSuccess: (data) => {
+    onSuccess: () => {
       localStorage.clear();
       queryClient.clear();
     },

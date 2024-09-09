@@ -51,7 +51,7 @@ const Modal = ({ setOpen }: ModalProps) => {
 
   return (
     <ModalPortal>
-      <S.Container>
+      <S.Container onClick={() => setOpen(false)}>
         <S.ModalWrapper>
           {!isDeleting && <S.Cancel onClick={() => setOpen(false)}>X</S.Cancel>}
           {content}
