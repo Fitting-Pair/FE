@@ -5,6 +5,7 @@ import { PAGE_PATH } from "@/constants";
 import { login } from "@/apis/user";
 import { AxiosError } from "axios";
 import theme from "@/styles/theme";
+import queryClient from "@/apis/queryClient";
 
 const useLogin = () => {
   const nav = useNavigate();
@@ -15,7 +16,7 @@ const useLogin = () => {
       toast.success("로그인 완료 !", {
         duration: 1200,
       });
-
+      queryClient.clear();
       localStorage.setItem("accessToken", data.data.accessToken);
       localStorage.setItem("refreshToken", data.data.refreshToken);
 
