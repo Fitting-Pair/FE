@@ -12,9 +12,13 @@ export default defineConfig({
     } as any),
   ],
   resolve: {
-    alias: [
-      { find: "@components", replacement: "/src/components" },
-      { find: "@", replacement: "/src" },
-    ],
+    alias: {
+      "@components": "/src/components",
+      "@": "/src",
+      buffer: "buffer",
+    },
+  },
+  define: {
+    "process.env": {},
   },
 });
