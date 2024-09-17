@@ -1,7 +1,7 @@
 import { create } from "zustand";
-import { TLoading } from "@/types/store";
+import { ILoading } from "@/types/store";
 
-const useLoadingStore = create<TLoading>((set) => ({
+const useLoadingStore = create<ILoading>((set) => ({
   loading: false,
 
   setLoading: (loading) =>

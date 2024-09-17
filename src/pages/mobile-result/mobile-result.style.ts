@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: ${theme.FONT.INTER_BOLD};
+  font-weight: 700;
   font-size: 32px;
   margin-top: 40px;
 

@@ -39,6 +39,7 @@
 }
 
 * {
+  font-family: "Pretendard", sans-serif;
   margin: 0;
   box-sizing: border-box;
 }
@@ -46,7 +47,6 @@
 body {
   background-color: #f4efe7;
   overflow-x: hidden;
-  font-family: "Roboto-Medium";
 }
 
 ul {

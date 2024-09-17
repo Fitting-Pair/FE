@@ -4,7 +4,7 @@ import Error from "./common/error/error";
 import Submit from "./common/submit-btn/submit-btn";
 import Input from "./common/input/input";
 import Icon from "./common/icon/icon";
-import MoblieIcon from "./common/mobile-icon/mobile-icon";
+import MobileIcon from "./common/mobile-icon/mobile-icon";
 import Button from "./common/button/button";
 
 // signup
@@ -32,7 +32,7 @@ export {
   WebcamComponent,
   ApparelSwiper,
   ClothComponent,
-  MoblieIcon,
+  MobileIcon,
   SwiperComponent,
   ResultPaper,
   TopComponent,
