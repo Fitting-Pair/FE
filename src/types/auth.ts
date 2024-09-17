@@ -1,24 +1,16 @@
-type TPhone = {
+interface IPhone {
   phoneNumber: string;
-};
+}
 
-type TAuth = {
-  phoneNumber: string;
+interface IAuthInfo extends IPhone {
   userName: string;
-  height: string;
+  height: number | string;
   gender: string;
-};
+}
 
-type TUser = TAuth & {
+interface IUserInfo extends IAuthInfo {
   id: number;
-};
-
-type TAuthProps = {
-  phoneNumber: string;
-  userName: string;
-  height: number;
-  gender: string;
-};
+}
 
 interface ILogin {
   id: number;
@@ -28,12 +20,7 @@ interface ILogin {
   nickName: string;
 }
 
-type TSignup = {
-  code: string;
-  message: string;
-};
-
-type TSignupProps = {
+interface ISignupProps {
   getGenderButtonProps?: (
     name: "gender",
     gender: string,
@@ -56,24 +43,6 @@ type TSignupProps = {
     onBlur: () => void;
   };
   errors: Record<string, string>;
-};
-
-
-interface IUserInfo {
-  id: number;
-  userName: string;
-  phoneNumber: string;
-  height: number;
-  gender: string;
 }
 
-export type {
-  TAuth,
-  TPhone,
-  TAuthProps,
-  ILogin,
-  TSignup,
-  TSignupProps,
-  TUser,
-  IUserInfo,
-};
+export type { IUserInfo, IPhone, IAuthInfo, ILogin, ISignupProps };

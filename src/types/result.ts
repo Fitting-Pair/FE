@@ -1,62 +1,63 @@
-import { TCloth } from "./cloth";
+import { AxiosResponse } from "axios";
+
+interface IClothInfo {
+  name: string;
+  brand: string;
+  imageUrl: string;
+  siteUrl: string;
+  clothesCategory?: string;
+}
+
+interface CustomResponse<T> extends AxiosResponse {
+  message: string;
+  data: T;
+}
+
+interface IBodySize {
+  resultId: number;
+  objFile: string;
+  bodyTypeName: string;
+  bodyTypeFeature: string;
+  bodyTypeCareful: string;
+  userBodySizeResponseDto: {
+    chestSize: number;
+    height: number;
+    hipSize: number;
+    shoulderSize: number;
+    waistSize: number;
+  };
+}
 
 /* 전체 결과지 */
-type TResultProps = {
-  resultId: number;
-  objFile: string;
-  bodyTypeName: string;
-  bodyTypeFeature: string;
-  bodyTypeCareful: string;
+interface IResultProps extends IBodySize {
   localDate: string;
-  userBodySizeResponseDto: {
-    chestSize: number;
-    height: number;
-    hipSize: number;
-    shoulderSize: number;
-    waistSize: number;
-  };
   userStylingResponseDto: {
-    userTopClothesDto: TCloth;
-    userBottomClothesItemsDto: TCloth;
+    userTopClothesDto: IClothInfo;
+    userBottomClothesItemsDto: IClothInfo;
   };
-};
+}
 
-type TResult = {
-  code: number;
-  message: string;
-  data: {
-    userStylingResultResponseDtos: TResultProps[];
-  };
-};
+interface IMypageResults {
+  userStylingResultResponseDtos: IResultProps[];
+}
 
-type TFirstResult = {
-  code: number;
-  message: string;
-  data: TData;
-};
-
-type TData = {
-  resultId: number;
-  objFile: string;
-  bodyTypeName: string;
-  bodyTypeFeature: string;
-  bodyTypeCareful: string;
-  userBodySizeResponseDto: {
-    chestSize: number;
-    height: number;
-    hipSize: number;
-    shoulderSize: number;
-    waistSize: number;
-  };
+interface IBodyCheckResults extends IBodySize {
   clothesDto: {
-    topClothesItems: TCloth[];
-    bottomClothesItems: TCloth[];
+    topClothesItems: IClothInfo[];
+    bottomClothesItems: IClothInfo[];
   };
-};
+}
 
-type TSelectCloth = {
+interface ISelectCloth {
   topName: string;
   bottomName: string;
-};
+}
 
-export type { TResultProps, TResult, TFirstResult, TData, TSelectCloth };
+export type {
+  IResultProps,
+  IBodyCheckResults,
+  ISelectCloth,
+  CustomResponse,
+  IMypageResults,
+  IClothInfo,
+};

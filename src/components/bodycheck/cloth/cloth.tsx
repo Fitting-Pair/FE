@@ -1,16 +1,15 @@
 import * as S from "./cloth.style";
 
-import { TCloth } from "@/types/cloth";
-import { TSelectCloth } from "@/types/result";
+import { IClothInfo, ISelectCloth } from "@/types/result";
 
 interface IClothProps {
-  appearl: TCloth;
-  setCloth: (cloth: TSelectCloth) => void;
-  cloth: TSelectCloth;
+  apparel: IClothInfo;
+  setCloth: (cloth: ISelectCloth) => void;
+  cloth: ISelectCloth;
 }
 
-const ClothComponent = ({ appearl, setCloth, cloth }: IClothProps) => {
-  const { imageUrl, name } = appearl;
+const ClothComponent = ({ apparel, setCloth, cloth }: IClothProps) => {
+  const { imageUrl, name } = apparel;
 
   const handleClick = () => {
     setCloth({ ...cloth, bottomName: name });

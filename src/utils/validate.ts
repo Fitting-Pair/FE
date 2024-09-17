@@ -1,6 +1,6 @@
-import { TPhone, TAuth } from "@/types/auth";
+import { IPhone, IAuthInfo } from "@/types/auth";
 
-function validatePhoneNumber(values: TPhone) {
+function validatePhoneNumber(values: IPhone) {
   const errors = {
     phoneNumber: "",
   };
@@ -13,7 +13,7 @@ function validatePhoneNumber(values: TPhone) {
   return errors;
 }
 
-function validateSignUp(values: TAuth) {
+function validateSignUp(values: IAuthInfo) {
   const errors = {
     userName: "",
     phoneNumber: "",
@@ -34,7 +34,7 @@ function validateSignUp(values: TAuth) {
 
   if (values.height === "") {
     errors.height = "키를 입력해주세요.";
-  } else if (!/^\d{3}$/.test(values.height)) {
+  } else if (!/^\d{3}$/.test(values.height as string)) {
     errors.height = "3자리 숫자로 입력해주세요.";
   }
 

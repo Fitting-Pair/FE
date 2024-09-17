@@ -1,11 +1,13 @@
 import { API_PATH } from "@/constants";
 import { axiosInstance } from "./axiosInstance";
-import { TFirstResult } from "@/types/result";
+import {
+  CustomResponse,
+  IBodyCheckResults,
+  ISelectCloth,
+} from "@/types/result";
 
-interface IPostResultProps {
+interface IPostResultProps extends ISelectCloth {
   resultId: number;
-  topName: string;
-  bottomName: string;
 }
 
 const postImg = async (imageFile: FormData) => {
@@ -16,7 +18,9 @@ const postImg = async (imageFile: FormData) => {
   return data;
 };
 
-const getBodyCheckResult = async (imgId: number): Promise<TFirstResult> => {
+const getBodyCheckResult = async (
+  imgId: number,
+): Promise<CustomResponse<IBodyCheckResults>> => {
   const { data } = await axiosInstance.get(`${API_PATH.RESULT}/${imgId}`);
 
   return data;

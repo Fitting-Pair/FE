@@ -2,15 +2,15 @@ import * as S from "../style/style-page.style";
 import * as Style from "./result-page.style";
 
 import { Icon } from "@/components";
-import { TResultProps } from "@/types/result";
+import { IResultProps } from "@/types/result";
 import { useLocation } from "react-router-dom";
 import QRCode from "react-qr-code";
-import { Triangle, Reactangle, Round } from "@/assets/images/body-check";
+import { Triangle, Rectangle, Round } from "@/assets/images/body-check";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 import Logo from "@/assets/images/Logo.webp";
 
 const ResultPage = () => {
-  const { state }: { state: TResultProps } = useLocation();
+  const { state }: { state: IResultProps } = useLocation();
   const { data: userInfo } = useGetUserInfo();
 
   if (userInfo && state)
@@ -19,7 +19,7 @@ const ResultPage = () => {
         <Icon blackNum={3} />
         <S.ContentResultContainer>
           <S.ResultBodyType>
-            <img src={Reactangle} alt="icons" className="reactangle" />
+            <img src={Rectangle} alt="icons" className="rectangle" />
             <S.ResultSize>
               <S.ResultTitle>
                 {userInfo.userName}님,

@@ -1,11 +1,11 @@
 import * as S from "./input.style";
-import { TSignupProps } from "@/types/auth";
+import { ISignupProps } from "@/types/auth";
 
 interface IInput {
   text: string;
   icon: string;
   half?: boolean;
-  signup: TSignupProps;
+  signup: ISignupProps;
   placeholder: string;
 }
 

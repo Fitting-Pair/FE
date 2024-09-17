@@ -13,16 +13,16 @@ import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import { ApparelSwiper } from "@/components";
 import { getBodyCheckResult } from "@/apis/results";
-import { TData, TSelectCloth } from "@/types/result";
+import { TData, ISelectCloth } from "@/types/result";
 import usePostResult from "@/hooks/queries/results/usePostResult";
-import { Triangle, Reactangle, Round } from "@/assets/images/body-check";
+import { Triangle, Rectangle, Round } from "@/assets/images/body-check";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const StylingPage = () => {
   const { imgId } = useParams();
   const { loading, setLoading } = useLoadingStore((state) => state);
   const [result, setResult] = useState<TData | null>(null);
-  const [cloth, setCloth] = useState<TSelectCloth>({
+  const [cloth, setCloth] = useState<ISelectCloth>({
     topName: "",
     bottomName: "",
   });
@@ -71,7 +71,7 @@ const StylingPage = () => {
         <Icon blackNum={2} />
         <S.ContentResultContainer>
           <S.ResultBodyType>
-            <img src={Reactangle} alt="icons" className="reactangle" />
+            <img src={Rectangle} alt="icons" className="rectangle" />
             <S.ResultSize>
               <S.ResultTitle>
                 {userInfo.userName}님,
@@ -137,7 +137,7 @@ const StylingPage = () => {
                 {result.clothesDto.topClothesItems.map((e, idx) => (
                   <SwiperSlide key={idx}>
                     <TopComponent
-                      appearl={e}
+                      apparel={e}
                       setCloth={setCloth}
                       cloth={cloth}
                     />
@@ -153,7 +153,7 @@ const StylingPage = () => {
                 {result.clothesDto.bottomClothesItems.map((e, idx) => (
                   <SwiperSlide key={idx}>
                     <ClothComponent
-                      appearl={e}
+                      apparel={e}
                       setCloth={setCloth}
                       cloth={cloth}
                     />
