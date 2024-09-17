@@ -25,11 +25,11 @@ const ResultPaper = ({ result }: ResultProps) => {
             <S.ResultExplainWrapper>
               <S.ContentWrapper>
                 <span>체형 특징</span>
-                <p>{result.bodyTypeFeature.substring(0, 80)}...</p>
+                <p>{result.bodyTypeFeature.substring(0, 70)}...</p>
               </S.ContentWrapper>
               <S.ContentWrapper>
                 <span>코디 주의사항</span>
-                <p>{result.bodyTypeCareful.substring(0, 80)}...</p>
+                <p>{result.bodyTypeCareful.substring(0, 70)}...</p>
               </S.ContentWrapper>
             </S.ResultExplainWrapper>
             <S.ClothWrapper>
