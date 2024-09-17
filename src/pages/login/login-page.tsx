@@ -44,7 +44,7 @@ const LoginPage = () => {
           <S.ErrorMeg>{loginForm.errors.phoneNumber}</S.ErrorMeg>
         )}
         <Submit
-          text={"log in"}
+          text={"Log in"}
           width={"268px"}
           login={true}
           onClick={handleSubmit}
