@@ -7,12 +7,12 @@ import { FaPen } from "react-icons/fa6";
 import { PAGE_PATH } from "@/constants";
 import useLogout from "@/hooks/queries/auth/useLogout";
 
-interface IMoblieIconProps {
+interface IMobileIconProps {
   text?: string;
   noBack?: boolean;
 }
 
-const MoblieIcon = ({ text, noBack }: IMoblieIconProps) => {
+const MobileIcon = ({ text, noBack }: IMobileIconProps) => {
   const { pathname } = useLocation();
   const { id } = useParams();
   const nav = useNavigate();
@@ -47,4 +47,4 @@ const MoblieIcon = ({ text, noBack }: IMoblieIconProps) => {
   );
 };
 
-export default MoblieIcon;
+export default MobileIcon;

@@ -3,7 +3,7 @@ import { FittingLayout, MyPageLayout, StylingLayout } from "./layouts";
 import {
   Homepage,
   LoginPage,
-  MoblieResultPage,
+  MobileResultPage,
   ModifyPage,
   MyPage,
   ResultDetail,
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       },
       {
         path: `${PAGE_PATH.RESULT}/:id`,
-        element: <MoblieResultPage />,
+        element: <MobileResultPage />,
       },
       {
         path: `${PAGE_PATH.RESULT}/${PAGE_PATH.DETAIL}/:name`,
