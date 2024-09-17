@@ -2,7 +2,7 @@ import * as S from "./mypage.style";
 
 import {
   Loading,
-  MoblieIcon,
+  MobileIcon,
   ResultPaper,
   SwiperComponent,
 } from "@/components";
@@ -10,7 +10,7 @@ import Logo from "@/assets/images/Logo-black.png";
 import { useNavigate } from "react-router-dom";
 import useGetAllResult from "@/hooks/queries/results/useGetAllResult";
 import { SwiperSlide } from "swiper/react";
-import { TResultProps } from "@/types/result";
+import { IResultProps } from "@/types/result";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 const MyPage = () => {
@@ -34,7 +34,7 @@ const MyPage = () => {
     content = (
       <S.PreviousResultWrapper $one={one}>
         <SwiperComponent>
-          {data?.map((e: TResultProps) => (
+          {data?.map((e: IResultProps) => (
             <SwiperSlide key={e.resultId}>
               <S.PreviousData
                 onClick={() => nav(`/my-page/result/${e.resultId}`)}
@@ -51,7 +51,7 @@ const MyPage = () => {
 
   return (
     <S.Container>
-      <MoblieIcon text="MYPAGE" noBack={true} />
+      <MobileIcon text="MYPAGE" noBack={true} />
       <S.MyResultTitle>
         PREVIOUS <br />
         RESULT

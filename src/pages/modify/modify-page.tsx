@@ -1,4 +1,4 @@
-import { Button, MoblieIcon, Modal, MypageBox } from "@/components";
+import { Button, MobileIcon, Modal, MypageBox } from "@/components";
 import Icon from "@/assets/images/icon.png";
 import Phone from "@/assets/images/phone.png";
 import Logo from "@/assets/images/Logo-black.png";
@@ -20,7 +20,7 @@ const ModifyPage = () => {
     return (
       <S.Container>
         {open && <Modal setOpen={setOpen} />}
-        <MoblieIcon text="FITTING PAIR" />
+        <MobileIcon text="FITTING PAIR" />
         <h1>MY PAGE</h1>
         <S.InfoWrapper>
           <MypageBox label="닉네임" text={data.userName} icon={Icon} />

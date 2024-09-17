@@ -1,26 +1,15 @@
 import { API_PATH } from "@/constants";
 import axios, { AxiosResponse } from "axios";
-import {
-  IUserInfo,
-  TAuthProps,
-  TPhone,
-  TSignup,
-  TUser,
-  ILogin,
-} from "@/types/auth";
+import { IAuthInfo, IPhone, IUserInfo, ILogin } from "@/types/auth";
 import { axiosInstance } from "./axiosInstance";
-
-interface CustomResponse<T> extends AxiosResponse {
-  message: string;
-  data: T;
-}
+import { CustomResponse } from "@/types/result";
 
 const signup = async ({
   userName,
   phoneNumber,
   height,
   gender,
-}: TAuthProps): Promise<TSignup> => {
+}: IAuthInfo): Promise<AxiosResponse> => {
   const { data } = await axios.post(
     `${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.SIGN_UP}`,
     {
@@ -35,7 +24,7 @@ const signup = async ({
 
 const login = async ({
   phoneNumber,
-}: TPhone): Promise<CustomResponse<ILogin>> => {
+}: IPhone): Promise<CustomResponse<ILogin>> => {
   const { data } = await axios.post(
     `${import.meta.env.VITE_API_URL}${API_PATH.AUTH}/${API_PATH.LOGIN}`,
     {
@@ -55,7 +44,7 @@ const logout = async () => {
   return data;
 };
 
-const getUserInfo = async (): Promise<CustomResponse<TUser>> => {
+const getUserInfo = async (): Promise<CustomResponse<IUserInfo>> => {
   const { data } = await axiosInstance.get(`${API_PATH.MYPAGE}/info`);
 
   return data;

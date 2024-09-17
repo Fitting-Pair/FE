@@ -1,6 +1,6 @@
-type TLoading = {
+interface ILoading {
   loading: boolean;
   setLoading: (loading: boolean) => void;
-};
+}
 
-export type { TLoading };
+export type { ILoading };

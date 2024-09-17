@@ -1,7 +1,7 @@
 import * as S from "./detail.style";
 
 import { useLocation } from "react-router-dom";
-import { MoblieIcon } from "@/components";
+import { MobileIcon } from "@/components";
 import Logo from "@/assets/images/Logo-black.png";
 import { useEffect } from "react";
 
@@ -18,7 +18,7 @@ const ResultDetail = () => {
 
   return (
     <S.Container>
-      <MoblieIcon text="PRODUCT" />
+      <MobileIcon text="PRODUCT" />
       <S.ContentWrapper>
         <S.Image src={state.imageUrl} />
         <button onClick={hanldeNav}>무신사 바로가기</button>

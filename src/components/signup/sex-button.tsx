@@ -1,10 +1,10 @@
-import { TSignupProps } from "@/types/auth";
+import { ISignupProps } from "@/types/auth";
 import * as S from "./sex-button.style";
 import { MdMale, MdFemale } from "react-icons/md";
 
 interface IButton {
   male?: boolean;
-  signup: TSignupProps;
+  signup: ISignupProps;
 }
 
 const SexButton = ({ male, signup }: IButton) => {

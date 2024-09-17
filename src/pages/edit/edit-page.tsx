@@ -1,4 +1,4 @@
-import { Button, MoblieIcon, MypageBox } from "@/components";
+import { Button, MobileIcon, MypageBox } from "@/components";
 import Icon from "@/assets/images/icon.png";
 import Phone from "@/assets/images/phone.png";
 import Logo from "@/assets/images/Logo-black.png";
@@ -35,7 +35,7 @@ const EditPage = () => {
   if (data)
     return (
       <S.Container>
-        <MoblieIcon text="FITTING PAIR" />
+        <MobileIcon text="FITTING PAIR" />
         <h1>EDIT</h1>
         <Style.InfoForm onSubmit={handleSubmit}>
           <MypageBox

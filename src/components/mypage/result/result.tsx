@@ -1,10 +1,10 @@
-import { TResultProps } from "@/types/result";
+import { IResultProps } from "@/types/result";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 
 import * as S from "./result.style";
 
 interface ResultProps {
-  result: TResultProps;
+  result: IResultProps;
 }
 
 const ResultPaper = ({ result }: ResultProps) => {

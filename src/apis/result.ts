@@ -1,14 +1,8 @@
 import { API_PATH } from "@/constants";
 import { axiosInstance } from "./axiosInstance";
-import { TResult, TResultProps } from "@/types/result";
-import { AxiosResponse } from "axios";
+import { IResultProps, CustomResponse, IMypageResults } from "@/types/result";
 
-interface CustomResponse<T> extends AxiosResponse {
-  message: string;
-  data: T;
-}
-
-const getAllResult = async (): Promise<TResult> => {
+const getAllResult = async (): Promise<CustomResponse<IMypageResults>> => {
   const { data } = await axiosInstance.get(`${API_PATH.MYPAGE}`);
 
   return data;
@@ -16,7 +10,7 @@ const getAllResult = async (): Promise<TResult> => {
 
 const getResult = async (
   resultId: number,
-): Promise<CustomResponse<TResultProps>> => {
+): Promise<CustomResponse<IResultProps>> => {
   const { data } = await axiosInstance.get(
     `${API_PATH.MYPAGE_RESULT}/${resultId}`,
   );
