@@ -37,7 +37,11 @@ const ModifyPage = () => {
               </div>
             </S.ButtonBox>
           </S.SEXBox>
-          <MypageBox label={"키(신장)"} text={data.height} icon={Ruler} />
+          <MypageBox
+            label={"키(신장)"}
+            text={data.height as string}
+            icon={Ruler}
+          />
           <Button
             text="수정하기"
             type="button"
