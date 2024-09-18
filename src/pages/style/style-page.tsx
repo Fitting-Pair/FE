@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import { ApparelSwiper } from "@/components";
 import { getBodyCheckResult } from "@/apis/results";
-import { TData, ISelectCloth } from "@/types/result";
+import { IBodyCheckResults, ISelectCloth } from "@/types/result";
 import usePostResult from "@/hooks/queries/results/usePostResult";
 import { Triangle, Rectangle, Round } from "@/assets/images/body-check";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
@@ -21,7 +21,7 @@ import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
 const StylingPage = () => {
   const { imgId } = useParams();
   const { loading, setLoading } = useLoadingStore((state) => state);
-  const [result, setResult] = useState<TData | null>(null);
+  const [result, setResult] = useState<IBodyCheckResults | null>(null);
   const [cloth, setCloth] = useState<ISelectCloth>({
     topName: "",
     bottomName: "",
