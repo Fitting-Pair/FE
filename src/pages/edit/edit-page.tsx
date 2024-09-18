@@ -68,7 +68,7 @@ const EditPage = () => {
           <MypageBox
             {...editForm.getTextInputProps("height")}
             label={"키(신장)"}
-            text={data.height}
+            text={data.height as string}
             icon={Ruler}
             edit={true}
             maxLength={3}
