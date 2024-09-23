@@ -31,6 +31,12 @@ const Container = styled.div`
   video {
     object-fit: cover;
   }
+
+  img {
+    width: 550px;
+    height: 750px;
+    object-fit: cover;
+  }
 `;
 
 const Button = styled.div`
