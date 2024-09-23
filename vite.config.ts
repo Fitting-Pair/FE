@@ -16,9 +16,16 @@ export default defineConfig({
       "@components": "/src/components",
       "@": "/src",
       buffer: "buffer",
+      stream: "stream-browserify",
+      string_decoder: "string_decoder/",
     },
   },
   define: {
     "process.env": {},
+  },
+  build: {
+    rollupOptions: {
+      external: ["stream", "string_decoder"],
+    },
   },
 });

@@ -1,32 +1,59 @@
-import { Br, Cut, Line, Printer, Text, Row } from "react-thermal-printer";
+import {
+  Printer,
+  Text,
+  Line,
+  Cut,
+  Row,
+  Barcode,
+  Br,
+} from "react-thermal-printer";
 
 interface ReceiptProps {
-  info: string;
+  nickname: string;
+  bodyTypeName: string;
+  chestSize: number;
+  height: number;
+  hipSize: number;
+  shoulderSize: number;
+  waistSize: number;
 }
 
-const Receipt = ({ info }: ReceiptProps) => {
-  //TODO: 예시 테스트용
+const Receipt = ({
+  bodyTypeName,
+  nickname,
+  chestSize,
+  height,
+  hipSize,
+  shoulderSize,
+  waistSize,
+}: ReceiptProps) => {
   return (
     <Printer type="epson" width={42} characterSet="korea">
-      <Text size={{ width: 2, height: 2 }}>{info}</Text>
-      <Text bold={true}>결제 완료</Text>
+      <Line />
+      <Text bold={true} size={{ width: 4, height: 4 }} align="center">
+        BODY CHECK
+      </Text>
       <Br />
+      <Text>ORDER "wooklas" FOR BODY SHAPE CHECK</Text>
+      <Text>AUGUST 9, 2024 20:00 PM</Text>
       <Line />
-      <Row left="결제방법" right="체크카드" />
-      <Row left="카드번호" right="123456**********" />
-      <Row left="할부기간" right="일시불" />
+      <Row left="HEIGHT:" right={`${height}cm`} />
+      <Row left="SHOULDER:" right={`${shoulderSize}cm`} />
+      <Row left="WAIST:" right={`${waistSize}cm`} />
+      <Row left="CHEST:" right={`${chestSize}cm`} />
+      <Row left="HIP:" right={`${hipSize}cm`} />
       <Line />
-      <Row left="맛있는 옥수수수염차 X 2" right="11,000" />
-      <Text>옵션1(500)/옵션2/메모</Text>
-      <Row left="(-) 할인" right="- 500" />
-      <Br />
+      <Row left="TYPE:" right={`"${bodyTypeName}"`} />
+      <Row left="NICKNAME:" right={nickname} />
       <Line />
-      <Row left="합계" right="9,500" />
-      <Line />
-      <Row left="대표" right="김대표" />
-      <Line />
-      <Br />
-      <Text align="center">Wifi: some-wifi / PW: 123123</Text>
+      <Barcode
+        align="center"
+        type="CODE39"
+        content="FITTING PAIR"
+        width={2}
+        height={100}
+        hriPosition="bottom"
+      />
       <Cut />
     </Printer>
   );
