@@ -7,11 +7,43 @@ import { useLocation } from "react-router-dom";
 import QRCode from "react-qr-code";
 import { Triangle, Rectangle, Round } from "@/assets/images/body-check";
 import useGetUserInfo from "@/hooks/queries/auth/useGetUserInfo";
-import Logo from "@/assets/images/Logo.webp";
+import { render } from "react-thermal-printer";
+import Receipt from "@/components/receipt/receipt";
+import useLogout from "@/hooks/queries/auth/useLogout";
 
 const ResultPage = () => {
   const { state }: { state: IResultProps } = useLocation();
   const { data: userInfo } = useGetUserInfo();
+  const { mutate: logout } = useLogout();
+
+  const handleClick = async () => {
+    if (userInfo && state) {
+      const { chestSize, height, hipSize, shoulderSize, waistSize } =
+        state.userBodySizeResponseDto;
+      const data = await render(
+        Receipt({
+          bodyTypeName: state.bodyTypeName,
+          nickname: userInfo.userName,
+          chestSize: Math.round(chestSize),
+          height: Math.round(height),
+          hipSize: Math.round(hipSize),
+          shoulderSize: Math.round(shoulderSize),
+          waistSize: Math.round(waistSize),
+        }),
+      );
+
+      const port = await window.navigator.serial.requestPort();
+      await port.open({ baudRate: 9600 });
+
+      const writer = port.writable?.getWriter();
+      if (writer != null) {
+        await writer.write(data);
+        writer.releaseLock();
+      }
+    }
+
+    logout();
+  };
 
   if (userInfo && state)
     return (
@@ -89,9 +121,9 @@ const ResultPage = () => {
               />
             </section>
             <Style.QRImg>
+              <button onClick={handleClick}>영수증 출력</button>
               <QRCode size={114} value={`https://fitting-pair.vercel.app/`} />
               <p>모바일로 보기</p>
-              <img src={Logo} alt="logo" />
             </Style.QRImg>
           </Style.ClothWrapper>
         </S.ContentResultContainer>

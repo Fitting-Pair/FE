@@ -86,7 +86,7 @@ const ResultBodyType = styled.div`
   border-radius: 24px;
   background-color: ${theme.COLOR.WHITE};
 
-  .reactangle {
+  .rectangle {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -128,7 +128,7 @@ const ResultTitle = styled.div`
 
 const ResultImg = styled.div`
   img {
-    height: 490px;
+    height: 450px;
     object-fit: contain;
   }
 `;
