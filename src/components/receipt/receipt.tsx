@@ -35,7 +35,7 @@ const Receipt = ({
       </Text>
       <Br />
       <Text>ORDER "wooklas" FOR BODY SHAPE CHECK</Text>
-      <Text>AUGUST 9, 2024 20:00 PM</Text>
+      <Text>SEPTEMBER 30, 2024</Text>
       <Line />
       <Row left="HEIGHT:" right={`${height}cm`} />
       <Row left="SHOULDER:" right={`${shoulderSize}cm`} />
@@ -43,7 +43,7 @@ const Receipt = ({
       <Row left="CHEST:" right={`${chestSize}cm`} />
       <Row left="HIP:" right={`${hipSize}cm`} />
       <Line />
-      <Row left="TYPE:" right={`"${bodyTypeName}"`} />
+      <Row left="TYPE:" right={bodyTypeName} />
       <Row left="NICKNAME:" right={nickname} />
       <Line />
       <Barcode
