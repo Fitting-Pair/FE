@@ -22,15 +22,21 @@ const ClothWrapper = styled.div`
 `;
 
 const QRImg = styled.div`
+  width: 500px;
   ${theme.ALIGN.COLUMN_CENTER};
-  img {
-    width: 400px;
-    object-fit: contain;
+  gap: 10px;
+
+  button {
+    border: none;
+    background-color: ${theme.COLOR.WHITE};
+    border-radius: 16px;
+    padding: 7px 15px;
+    font-size: 15px;
+    cursor: pointer;
   }
 
   p {
     font-weight: bold;
-    margin: 10px 0;
   }
 
   svg {

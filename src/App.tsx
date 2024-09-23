@@ -14,7 +14,6 @@ import {
   EditPage,
 } from "./pages";
 import { PAGE_PATH } from "@/constants";
-import TestPage from "./pages/test";
 
 const router = createBrowserRouter([
   {
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
       {
         path: `${PAGE_PATH.BODY_CHECK}`,
         element: <BodyCheckPage />,
-      },
-      {
-        path: "test",
-        element: <TestPage />,
       },
     ],
   },
