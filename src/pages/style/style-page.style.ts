@@ -140,11 +140,13 @@ const ResultTitle = styled.div`
 
 const ResultImg = styled.div`
   img {
+    width: 330px;
     height: 450px;
-    object-fit: contain;
+    object-fit: cover;
 
     @media screen and (max-width: 830px) {
-      height: 350px;
+      width: 250px;
+      object-fit: contain;
     }
   }
 `;
