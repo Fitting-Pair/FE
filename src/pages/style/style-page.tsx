@@ -49,7 +49,7 @@ const StylingPage = () => {
           setLoading(false);
         }
       },
-      1000 * 60 * 3.5,
+      1000 * 60 * 3,
     );
 
     return () => clearTimeout(timer);
@@ -76,7 +76,8 @@ const StylingPage = () => {
               <S.ResultTitle>
                 {userInfo.userName}님,
                 <br />
-                <span>{result.bodyTypeName}</span> 체형입니다.
+                <span>{result.bodyTypeName}</span>
+                체형입니다.
               </S.ResultTitle>
               <S.BodySizeWrapper>
                 <h5>*신체치수</h5>
