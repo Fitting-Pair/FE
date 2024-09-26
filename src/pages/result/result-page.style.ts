@@ -3,19 +3,18 @@ import theme from "../../styles/theme";
 
 const ClothWrapper = styled.div`
   margin: 50px 0;
-  width: 996px;
+  width: 92%;
+  padding: 0 30px;
   ${theme.ALIGN.ROW_SPACE_BETWEEN};
-  padding: 0 10px;
 
   section {
     ${theme.ALIGN.ROW_CENTER};
-    gap: 10px;
+    gap: 30px;
   }
 
   img {
     width: 200px;
     height: 200px;
-    margin: 0px 15px;
     border-radius: 24px;
     object-fit: cover;
   }
@@ -33,6 +32,11 @@ const QRImg = styled.div`
     padding: 7px 15px;
     font-size: 15px;
     cursor: pointer;
+    margin-bottom: 10px;
+
+    &:hover {
+      color: ${theme.COLOR.GREEN};
+    }
   }
 
   p {
