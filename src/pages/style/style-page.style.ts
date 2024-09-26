@@ -80,7 +80,8 @@ const ContentWrapper = styled.div`
 
 const ResultBodyType = styled.div`
   position: relative;
-  ${theme.ALIGN.ROW_CENTER};
+  ${theme.ALIGN.ROW_SPACE_BETWEEN};
+  padding: 0px 60px;
   width: 92%;
   height: 500px;
   border-radius: 24px;
@@ -91,13 +92,21 @@ const ResultBodyType = styled.div`
     top: 20px;
     right: 20px;
   }
+
+  @media screen and (max-width: 830px) {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding-top: 40px;
+    gap: 30px;
+  }
 `;
 
 const ClothWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 996px;
+  width: 92%;
   height: 342px;
   margin: 0px 25px 25px;
   border-radius: 24px;
@@ -118,8 +127,11 @@ const Category = styled.div`
 `;
 
 const ResultTitle = styled.div`
-  font-size: 3rem;
+  z-index: 2;
+  font-size: 2.4rem;
   font-weight: 900;
+  word-break: keep-all;
+  width: 300px;
 
   span {
     color: ${theme.COLOR.ORANGE};
@@ -130,6 +142,10 @@ const ResultImg = styled.div`
   img {
     height: 450px;
     object-fit: contain;
+
+    @media screen and (max-width: 830px) {
+      height: 350px;
+    }
   }
 `;
 
@@ -144,6 +160,7 @@ const ContentResultContainer = styled.div`
   margin-bottom: 20px;
   margin-top: 10px;
   position: relative;
+  width: 98%;
 `;
 
 const Button = styled.div`
@@ -190,7 +207,7 @@ const Slider = styled.div`
 
 const ResultSize = styled.div`
   height: 100%;
-  padding: 10px 0;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
