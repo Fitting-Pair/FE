@@ -25,7 +25,7 @@ const Container = styled.div`
 
   @media ${theme.WINDOW_SIZE.IPAD_PRO} {
     max-width: 550px;
-    height: 750px;
+    height: 700px;
   }
 
   video {
@@ -68,15 +68,18 @@ const Button = styled.div`
   }
 `;
 
-const NextButton = styled.div`
-  position: absolute;
-  top: 55%;
-  right: -150px;
+const NextButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: white;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+
   svg {
     width: 25px;
     height: 25px;
-    background-color: white;
-    border-radius: 50%;
     padding: 6px;
   }
 `;
@@ -171,6 +174,10 @@ const CounterBox = styled.div`
   }
 `;
 
+const Retry = styled.p`
+  font-size: 15px;
+`;
+
 export {
   Container,
   Button,
@@ -179,4 +186,5 @@ export {
   TipWrapper,
   ContentWrapper,
   CounterBox,
+  Retry,
 };
