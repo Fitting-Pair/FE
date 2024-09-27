@@ -14,19 +14,14 @@ const ring = keyframes`
 
 const Container = styled.div`
   position: relative;
-  max-width: 350px;
-  height: 350px;
+  max-width: 550px;
+  height: 700px;
   border-radius: 10px;
   overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    max-width: 550px;
-    height: 700px;
-  }
 
   video {
     object-fit: cover;

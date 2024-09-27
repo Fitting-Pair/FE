@@ -144,7 +144,7 @@ const ResultImg = styled.div`
     height: 450px;
     object-fit: cover;
 
-    @media screen and (max-width: 820px) {
+    @media ${theme.WINDOW_SIZE.BASE} {
       width: 330px;
       object-fit: contain;
     }

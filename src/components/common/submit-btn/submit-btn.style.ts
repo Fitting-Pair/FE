@@ -1,18 +1,11 @@
 import styled from "styled-components";
 import theme from "@/styles/theme";
 
-type TButton = {
-  width: string;
-  $login?: boolean;
-};
-
-const Container = styled.button<TButton>`
-  cursor: pointer;
-  width: ${(props) => props.width};
+const Container = styled.button`
+  width: 100%;
   height: 50px;
   background-color: ${theme.COLOR.GREEN};
   color: ${theme.COLOR.WHITE};
-  margin: 16px;
 
   box-shadow: 2px 6px 10px -7px rgba(0, 0, 0, 0.5);
   border-radius: 16px;
@@ -20,7 +13,6 @@ const Container = styled.button<TButton>`
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 
   @media ${theme.WINDOW_SIZE.MOBILE} {
-    width: ${(props) => (props.$login ? "268px" : "240px")};
     height: 40px;
   }
 

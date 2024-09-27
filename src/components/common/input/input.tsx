@@ -4,15 +4,14 @@ import { ISignupProps } from "@/types/auth";
 interface IInput {
   text: string;
   icon: string;
-  half?: boolean;
   signup: ISignupProps;
   placeholder: string;
 }
 
-const Input = ({ text, icon, half, signup, placeholder }: IInput) => {
+const Input = ({ text, icon, signup, placeholder }: IInput) => {
   if (text === "Phone") {
     return (
-      <S.Container $half={half}>
+      <S.Container>
         <input
           placeholder={placeholder}
           {...signup.getPhoneNumInputProps("phoneNumber")}
@@ -23,7 +22,7 @@ const Input = ({ text, icon, half, signup, placeholder }: IInput) => {
     );
   } else {
     return (
-      <S.Container $half={half}>
+      <S.Container>
         {text === "Height" ? (
           <input
             placeholder={placeholder}
