@@ -119,7 +119,7 @@ const WebcamComponent = () => {
             mirrored={true}
             audio={false}
             width={550}
-            height={750}
+            height={700}
             ref={webcamRef}
             screenshotFormat="image/png"
             videoConstraints={videoConstraints}
@@ -134,16 +134,29 @@ const WebcamComponent = () => {
       )}
       {count === 6 ? (
         <>
-          <S.TipWrapper>
-            <S.TipIcon>{`Tip ) 아래 순서를 따라해주세요.`}</S.TipIcon>
-            <S.ContentWrapper>
-              <span>촬영 버튼을 누르고 5초 후에 촬영됩니다.</span>
-              <li>1. 정면을 바라보고 사진을 찍어주세요.</li>
-              <li>2. 옆구리가 붙지 않도록 팔을 벌려주세요.</li>
-              <li>3. 어깨넓이 만큼 다리를 벌려주세요.</li>
-              <li>4. 충분히 거리를 두고 발끝까지 나오게 찍어주세요.</li>
-            </S.ContentWrapper>
-          </S.TipWrapper>
+          {!isCaptureEnable ? (
+            <S.TipWrapper>
+              <S.TipIcon>{`Tip ) 아래 순서를 따라해주세요.`}</S.TipIcon>
+              <S.ContentWrapper>
+                <span>촬영 버튼을 누르고 5초 후에 촬영됩니다.</span>
+                <li>1. 정면을 바라보고 사진을 찍어주세요.</li>
+                <li>2. 옆구리가 붙지 않도록 팔을 벌려주세요.</li>
+              </S.ContentWrapper>
+            </S.TipWrapper>
+          ) : (
+            <S.TipWrapper>
+              <S.ContentWrapper>
+                <S.NextButton onClick={handleNextClick} type="button">
+                  <p>체형 분석 하기</p>
+                  <FaArrowRight />
+                </S.NextButton>
+
+                <S.Retry>
+                  재촬영을 원하시면 아래 촬영 버튼을 눌러주세요.
+                </S.Retry>
+              </S.ContentWrapper>
+            </S.TipWrapper>
+          )}
           <S.Button onClick={handleCam}>
             <img src={CamImg} />
           </S.Button>
@@ -154,12 +167,6 @@ const WebcamComponent = () => {
             <p>{count}</p>
           </S.CounterBox>
         </S.TipWrapper>
-      )}
-
-      {isCaptureEnable && (
-        <S.NextButton onClick={handleNextClick}>
-          <FaArrowRight />
-        </S.NextButton>
       )}
     </div>
   );
