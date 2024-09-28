@@ -8,7 +8,7 @@ import usePostImg from "@/hooks/queries/results/usePostImg";
 
 const videoConstraints = {
   width: 550,
-  height: 750,
+  height: 700,
 };
 
 const WebcamComponent = () => {
@@ -53,7 +53,6 @@ const WebcamComponent = () => {
               const gesture = results.gestures[0][0];
 
               if (gesture.categoryName === "Closed_Fist") {
-                console.log("주먹을 쥠");
                 startTimer();
                 return;
               }
@@ -138,7 +137,7 @@ const WebcamComponent = () => {
             <S.TipWrapper>
               <S.TipIcon>{`Tip ) 아래 순서를 따라해주세요.`}</S.TipIcon>
               <S.ContentWrapper>
-                <span>촬영 버튼을 누르고 5초 후에 촬영됩니다.</span>
+                <span>주먹 쥔 것이 감지되면, 5초 후에 촬영됩니다.</span>
                 <li>1. 정면을 바라보고 사진을 찍어주세요.</li>
                 <li>2. 옆구리가 붙지 않도록 팔을 벌려주세요.</li>
               </S.ContentWrapper>
@@ -162,11 +161,9 @@ const WebcamComponent = () => {
           </S.Button>
         </>
       ) : (
-        <S.TipWrapper>
-          <S.CounterBox>
-            <p>{count}</p>
-          </S.CounterBox>
-        </S.TipWrapper>
+        <S.CounterBox>
+          <p>{count}</p>
+        </S.CounterBox>
       )}
     </div>
   );

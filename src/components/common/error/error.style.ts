@@ -20,6 +20,10 @@ const Container = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
 
   svg {
+    width: 50px;
+    height: 50px;
+    color: ${theme.COLOR.RED};
+    animation: ${alert} 1.5s 0s infinite linear;
     margin-bottom: 30px;
   }
 
@@ -31,15 +35,6 @@ const Container = styled.div`
 
     &:hover {
       opacity: 1;
-    }
-  }
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    svg {
-      width: 50px;
-      height: 50px;
-      color: ${theme.COLOR.RED};
-      animation: ${alert} 1.5s 0s infinite linear;
     }
   }
 

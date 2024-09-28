@@ -48,64 +48,61 @@ const SignUpPage = () => {
 
   return (
     <S.Container>
-      <S.Logo src={SIGNUP} />
-      <div>
-        <Input
-          text={"Nickname"}
-          icon={Icon}
-          half={false}
-          signup={signupForm}
-          placeholder={"닉네임"}
-        />
-        {signupForm.errors.userName && signupForm.touched.userName && (
-          <S.ErrorMeg>{signupForm.errors.userName}</S.ErrorMeg>
-        )}
-      </div>
-      <div>
-        <Input
-          text={"Phone"}
-          icon={Phone}
-          half={false}
-          signup={signupForm}
-          placeholder={"휴대폰 번호"}
-        />
-        {signupForm.errors.phoneNumber && signupForm.touched.phoneNumber && (
-          <S.ErrorMeg>{signupForm.errors.phoneNumber}</S.ErrorMeg>
-        )}
-      </div>
-      <S.Wrapper>
-        <S.ButtonBox>
-          <SexButton male={true} signup={signupForm} />
-          <hr />
-          <SexButton signup={signupForm} />
-        </S.ButtonBox>
-        {signupForm.errors.userGender && signupForm.touched.userGender && (
-          <S.ErrorMeg>{signupForm.errors.userGender}</S.ErrorMeg>
-        )}
-        <div>
+      <S.Logo src={SIGNUP} alt="logo" />
+      <S.SignUpContainer>
+        <S.InputBox>
           <Input
-            text={"Height"}
-            icon={Ruler}
-            half={true}
+            text={"Nickname"}
+            icon={Icon}
             signup={signupForm}
-            placeholder={"키"}
+            placeholder={"닉네임"}
           />
-          {signupForm.errors.height && signupForm.touched.height && (
-            <S.ErrorMeg>{signupForm.errors.height}</S.ErrorMeg>
+          {signupForm.errors.userName && signupForm.touched.userName && (
+            <S.ErrorMeg>{signupForm.errors.userName}</S.ErrorMeg>
           )}
-        </div>
-      </S.Wrapper>
-
-      <Submit
-        text={"SUBMIT"}
-        width={"530px"}
-        onClick={handleSubmit}
-        disabled={handleDisabled()}
-      />
-
-      <S.GoLogin>
-        Do you have a id ?<Link to="/login">Log in</Link>
-      </S.GoLogin>
+        </S.InputBox>
+        <S.InputBox>
+          <Input
+            text={"Phone"}
+            icon={Phone}
+            signup={signupForm}
+            placeholder={"휴대폰 번호"}
+          />
+          {signupForm.errors.phoneNumber && signupForm.touched.phoneNumber && (
+            <S.ErrorMeg>{signupForm.errors.phoneNumber}</S.ErrorMeg>
+          )}
+        </S.InputBox>
+        <S.HalfWrapper>
+          <S.ButtonBox>
+            <SexButton male={true} signup={signupForm} />
+            <hr />
+            <SexButton signup={signupForm} />
+          </S.ButtonBox>
+          <S.InputBox>
+            <Input
+              text={"Height"}
+              icon={Ruler}
+              signup={signupForm}
+              placeholder={"키"}
+            />
+            {/* {signupForm.errors.height && signupForm.touched.height && (
+              <S.ErrorMeg className="height-error">
+                {signupForm.errors.height}
+              </S.ErrorMeg>
+            )} */}
+          </S.InputBox>
+        </S.HalfWrapper>
+        <S.ButtonWrapper>
+          <Submit
+            text={"SUBMIT"}
+            onClick={handleSubmit}
+            disabled={handleDisabled()}
+          />
+          <S.GoLogin>
+            Do you have a id ?<Link to="/login">Log in</Link>
+          </S.GoLogin>
+        </S.ButtonWrapper>
+      </S.SignUpContainer>
     </S.Container>
   );
 };

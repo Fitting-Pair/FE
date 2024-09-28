@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import theme from "@/styles/theme";
+import { RESPONSIVE_SIZE } from "@/constants";
 
 const spinning = keyframes`
   from {
@@ -18,7 +19,8 @@ const Container = styled.div`
   place-items: center;
   position: relative;
 
-  width: 100vw;
+  max-width: ${RESPONSIVE_SIZE.BASE};
+  width: 100%;
   height: 100dvh;
 
   img {

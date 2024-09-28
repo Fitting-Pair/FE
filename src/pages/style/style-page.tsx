@@ -72,18 +72,21 @@ const StylingPage = () => {
         <S.ContentResultContainer>
           <S.ResultBodyType>
             <img src={Rectangle} alt="icons" className="rectangle" />
-            <S.ResultSize>
-              <S.ResultTitle>
-                {userInfo.userName}님,
-                <br />
-                <span>{result.bodyTypeName}</span>
-                체형입니다.
-              </S.ResultTitle>
+            <S.ResultTitle>
+              {userInfo.userName}님,
+              <br />
+              <span>{result.bodyTypeName}</span>
+              체형입니다.
+            </S.ResultTitle>
+            <S.UserBody>
+              <S.ResultImg>
+                <img src={result.objFile} />
+              </S.ResultImg>
               <S.BodySizeWrapper>
                 <h5>*신체치수</h5>
                 <ul>
                   <li>
-                    키(신장) : <b>{result.userBodySizeResponseDto.height}cm</b>
+                    키(신장) :<b>{result.userBodySizeResponseDto.height}cm</b>
                   </li>
                   <li>
                     어깨 단면 :
@@ -112,10 +115,7 @@ const StylingPage = () => {
                   </li>
                 </ul>
               </S.BodySizeWrapper>
-            </S.ResultSize>
-            <S.ResultImg>
-              <img src={result.objFile} />
-            </S.ResultImg>
+            </S.UserBody>
           </S.ResultBodyType>
 
           <S.ResultExplainWrapper>

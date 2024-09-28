@@ -1,3 +1,4 @@
+import { RESPONSIVE_SIZE } from "@/constants";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -8,8 +9,10 @@ const Container = styled.div`
     #fdeaad 55.58%,
     #a2c9b4 99.53%
   );
-  width: 100vw;
+  max-width: ${RESPONSIVE_SIZE.BASE};
+  width: 100%;
   min-height: 100dvh;
+  margin: 0 auto;
 `;
 
 const OutletWrapper = styled.div`
