@@ -54,12 +54,15 @@ const ResultPage = () => {
         <S.ContentResultContainer>
           <S.ResultBodyType>
             <img src={Rectangle} alt="icons" className="rectangle" />
-            <S.ResultSize>
-              <S.ResultTitle>
-                {userInfo.userName}님,
-                <br />
-                <span>{state.bodyTypeName}</span> 체형입니다.
-              </S.ResultTitle>
+            <S.ResultTitle>
+              {userInfo.userName}님,
+              <br />
+              <span>{state.bodyTypeName}</span> 체형입니다.
+            </S.ResultTitle>
+            <S.UserBody>
+              <S.ResultImg>
+                <img src={state.objFile} />
+              </S.ResultImg>
               <S.BodySizeWrapper>
                 <h5>*신체치수</h5>
                 <ul>
@@ -91,10 +94,7 @@ const ResultPage = () => {
                   </li>
                 </ul>
               </S.BodySizeWrapper>
-            </S.ResultSize>
-            <S.ResultImg>
-              <img src={state.objFile} />
-            </S.ResultImg>
+            </S.UserBody>
           </S.ResultBodyType>
 
           <S.ResultExplainWrapper>
