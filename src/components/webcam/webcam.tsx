@@ -8,7 +8,7 @@ import usePostImg from "@/hooks/queries/results/usePostImg";
 
 const videoConstraints = {
   width: 550,
-  height: 750,
+  height: 700,
 };
 
 const WebcamComponent = () => {
@@ -53,7 +53,6 @@ const WebcamComponent = () => {
               const gesture = results.gestures[0][0];
 
               if (gesture.categoryName === "Closed_Fist") {
-                console.log("주먹을 쥠");
                 startTimer();
                 return;
               }
@@ -162,11 +161,9 @@ const WebcamComponent = () => {
           </S.Button>
         </>
       ) : (
-        <S.TipWrapper>
-          <S.CounterBox>
-            <p>{count}</p>
-          </S.CounterBox>
-        </S.TipWrapper>
+        <S.CounterBox>
+          <p>{count}</p>
+        </S.CounterBox>
       )}
     </div>
   );
