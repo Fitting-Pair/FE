@@ -1,24 +1,20 @@
 import styled from "styled-components";
 import theme from "@/styles/theme";
 
-interface IInput {
-  $half?: boolean;
-}
-
-const Container = styled.div<IInput>`
+const Container = styled.div`
   ${theme.ALIGN.ROW_SPACE_BETWEEN};
-  width: ${(props) => (props.$half ? "240px" : "530px")};
+  width: 100%;
   height: 50px;
+  gap: 10px;
 
   background-color: ${theme.COLOR.WHITE};
   padding: 0px 20px;
   box-shadow: 2px 6px 10px -7px rgba(0, 0, 0, 0.5);
   border-radius: 16px;
-  margin: 16px;
 
   input {
     height: 100%;
-    width: 90%;
+    width: 100%;
     font-size: 12px;
     font-family: ${theme.FONT.ROBOTO_MEDIUM};
     letter-spacing: 0.5px;
@@ -30,17 +26,14 @@ const Container = styled.div<IInput>`
     }
   }
 
-  img {
-    margin-right: 10px;
-  }
-
   @media ${theme.WINDOW_SIZE.MOBILE} {
-    width: ${(props) => (props.$half ? "110px" : "240px")};
+    width: 100%;
     height: 40px;
-    margin: ${(props) => (props.$half ? "16px 10px" : "16px")};
+    padding: 0px 10px;
 
     img {
-      display: ${(props) => (props.$half ? "none" : "")};
+      width: 20px;
+      height: 20px;
     }
   }
 `;

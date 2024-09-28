@@ -14,19 +14,14 @@ const ring = keyframes`
 
 const Container = styled.div`
   position: relative;
-  max-width: 350px;
-  height: 350px;
+  max-width: 550px;
+  height: 700px;
   border-radius: 10px;
   overflow: hidden;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    max-width: 550px;
-    height: 700px;
-  }
 
   video {
     object-fit: cover;
@@ -72,15 +67,16 @@ const NextButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  gap: 5px;
   border: none;
   background-color: white;
   margin-bottom: 20px;
-  padding: 5px 10px;
+  padding: 8px 13px;
 
   svg {
-    width: 25px;
-    height: 25px;
-    padding: 6px;
+    width: 13px;
+    height: 13px;
   }
 `;
 
@@ -140,7 +136,8 @@ const CounterBox = styled.div`
   position: relative;
   ${theme.ALIGN.COLUMN_CENTER};
   width: 100%;
-  height: 300px;
+  height: 200px;
+  margin-top: 50px;
 
   p {
     ${theme.ALIGN.COLUMN_CENTER};
@@ -148,12 +145,12 @@ const CounterBox = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background: transparent;
     border: 3px solid #3c3c3c;
     border-radius: 50%;
-    font-size: 80px;
+    font-size: 60px;
     color: #000;
     letter-spacing: 4px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);

@@ -3,6 +3,7 @@ import theme from "@/styles/theme";
 
 const Container = styled.div`
   ${theme.ALIGN.COLUMN_CENTER};
+  min-width: 660px;
 `;
 
 const IconWrapper = styled.div`
@@ -27,13 +28,6 @@ const Icon = styled.div`
     margin-right: 10px;
     width: 13%;
   }
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    font-size: 17px;
-    width: 135px;
-    height: 43px;
-    border-radius: 50px;
-  }
 `;
 
 const IconBlack = styled(Icon)`
@@ -41,10 +35,6 @@ const IconBlack = styled(Icon)`
 
   color: ${theme.COLOR.WHITE};
   background-color: ${theme.COLOR.BLACK};
-
-  @media ${theme.WINDOW_SIZE.IPAD_PRO} {
-    width: 135px;
-  }
 `;
 
 const ContentWrapper = styled.div`
@@ -80,25 +70,18 @@ const ContentWrapper = styled.div`
 
 const ResultBodyType = styled.div`
   position: relative;
-  ${theme.ALIGN.ROW_SPACE_BETWEEN};
-  padding: 0px 60px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 60px 10px;
   width: 92%;
-  height: 500px;
   border-radius: 24px;
   background-color: ${theme.COLOR.WHITE};
+  gap: 10px;
 
   .rectangle {
     position: absolute;
     top: 20px;
     right: 20px;
-  }
-
-  @media screen and (max-width: 830px) {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    padding-top: 40px;
-    gap: 30px;
   }
 `;
 
@@ -127,13 +110,13 @@ const Category = styled.div`
 `;
 
 const ResultTitle = styled.div`
-  z-index: 2;
   font-size: 2.4rem;
   font-weight: 900;
   word-break: keep-all;
   width: 300px;
 
   span {
+    margin-right: 2px;
     color: ${theme.COLOR.ORANGE};
   }
 `;
@@ -141,13 +124,7 @@ const ResultTitle = styled.div`
 const ResultImg = styled.div`
   img {
     width: 330px;
-    height: 450px;
-    object-fit: cover;
-
-    @media screen and (max-width: 830px) {
-      width: 330px;
-      object-fit: contain;
-    }
+    object-fit: contain;
   }
 `;
 
@@ -207,23 +184,27 @@ const Slider = styled.div`
   }
 `;
 
-const ResultSize = styled.div`
-  height: 100%;
-  padding: 10px;
+const BodySizeWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-`;
+  justify-content: flex-end;
+  gap: 5px;
+  padding-bottom: 40px;
 
-const BodySizeWrapper = styled.div`
   h5 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 19px;
   }
 
   li {
-    font-size: 20px;
+    display: flex;
+    gap: 4px;
+    font-size: 17px;
   }
+`;
+
+const UserBody = styled.div`
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
 `;
 
 export {
@@ -241,6 +222,6 @@ export {
   ContentWrapper,
   ContentResultContainer,
   ResultBodyType,
-  ResultSize,
   BodySizeWrapper,
+  UserBody,
 };

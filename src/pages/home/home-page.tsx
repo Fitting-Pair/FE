@@ -18,19 +18,21 @@ const Homepage = () => {
 
   return (
     <S.Container>
-      <S.LogoWrapper>
-        <img src={LOGO} />
-      </S.LogoWrapper>
-      <S.Text>
-        <p>
-          This is a service that analyzes your body shape and <br />
-          recommends clothing through CV and AI.
-        </p>
-      </S.Text>
-      <button onClick={handleClick}>
-        START
+      <S.LogoContainer>
+        <S.LogoWrapper>
+          <img src={LOGO} alt="logo" />
+        </S.LogoWrapper>
+        <S.Text>
+          <p>
+            This is a service that analyzes your body shape and <br />
+            recommends clothing through CV and AI.
+          </p>
+        </S.Text>
+      </S.LogoContainer>
+      <S.NextButton onClick={handleClick}>
+        <p>START</p>
         <img src={START_IMG} />
-      </button>
+      </S.NextButton>
     </S.Container>
   );
 };

@@ -32,21 +32,21 @@ const LoginPage = () => {
         <img src={LOGO} />
       </S.LogoWrapper>
       <S.Wrapper onSubmit={(e) => e.preventDefault()}>
-        <S.InputBox>
-          <img src={Icon} />
-          <input
-            placeholder="휴대폰 번호"
-            {...loginForm.getPhoneNumInputProps("phoneNumber")}
-            maxLength={13}
-          />
-        </S.InputBox>
-        {loginForm.errors.phoneNumber && loginForm.touched.phoneNumber && (
-          <S.ErrorMeg>{loginForm.errors.phoneNumber}</S.ErrorMeg>
-        )}
+        <S.InputWrapper>
+          <S.InputBox>
+            <img src={Icon} alt="person icon" />
+            <input
+              placeholder="휴대폰 번호"
+              {...loginForm.getPhoneNumInputProps("phoneNumber")}
+              maxLength={13}
+            />
+          </S.InputBox>
+          {loginForm.errors.phoneNumber && loginForm.touched.phoneNumber && (
+            <S.ErrorMeg>{loginForm.errors.phoneNumber}</S.ErrorMeg>
+          )}
+        </S.InputWrapper>
         <Submit
           text={"Log in"}
-          width={"268px"}
-          login={true}
           onClick={handleSubmit}
           disabled={loginForm.errors.phoneNumber !== ""}
         />
