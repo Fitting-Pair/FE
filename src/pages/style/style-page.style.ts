@@ -113,7 +113,6 @@ const ResultTitle = styled.div`
   font-size: 2.4rem;
   font-weight: 900;
   word-break: keep-all;
-  width: 300px;
 
   span {
     margin-right: 2px;
