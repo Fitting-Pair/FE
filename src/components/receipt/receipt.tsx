@@ -34,7 +34,7 @@ const Receipt = ({
         BODY CHECK
       </Text>
       <Br />
-      <Text>ORDER "wooklas" FOR BODY SHAPE CHECK</Text>
+      <Text>{`ORDER "${nickname}" FOR BODY SHAPE CHECK`}</Text>
       <Text>SEPTEMBER 30, 2024</Text>
       <Line />
       <Row left="HEIGHT:" right={`${height}cm`} />
