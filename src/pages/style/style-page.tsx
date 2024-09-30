@@ -49,7 +49,7 @@ const StylingPage = () => {
           setLoading(false);
         }
       },
-      1000 * 60 * 1.8,
+      1000 * 60 * 2,
     );
 
     return () => clearTimeout(timer);
